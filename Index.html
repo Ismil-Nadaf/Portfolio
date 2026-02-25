@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISMIL NADAF — Senior Product & UX Design Leader</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #F5A800;
+    --black: #111111;
+    --white: #FFFEF0;
+    --red: #E8334A;
+    --blue: #3B6FE0;
+    --green: #2DBF6A;
+    --pink: #FF6B9D;
+    --border: 3px solid var(--black);
+    --shadow: 5px 5px 0px var(--black);
+    --shadow-lg: 8px 8px 0px var(--black);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--yellow);
+    background-image: radial-gradient(var(--black) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    font-family: 'Space Mono', monospace;
+    color: var(--black);
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='8' fill='%23F5A800' stroke='%23111' stroke-width='2'/%3E%3C/svg%3E") 10 10, auto;
+  }
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: var(--white); border-bottom: var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px; height: 64px;
+  }
+  .nav-logo { font-family:'Unbounded',sans-serif;font-weight:900;font-size:1rem;letter-spacing:-1px;background:var(--yellow);border:var(--border);padding:4px 12px;box-shadow:var(--shadow); }
+  .nav-links { display:flex;gap:5px;list-style:none; }
+  .nav-links a { text-decoration:none;color:var(--black);font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 11px;border:var(--border);transition:all 0.15s;background:transparent; }
+  .nav-links a:hover { background:var(--black);color:var(--yellow);transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--yellow); }
+  .nav-cta { background:var(--red)!important;color:var(--white)!important;box-shadow:var(--shadow); }
+  .nav-cta:hover { background:var(--black)!important; }
+  #hero { min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:64px; }
+  .hero-left { background:var(--white);border-right:var(--border);padding:80px 60px;display:flex;flex-direction:column;justify-content:center; }
+  .hero-tag { display:inline-block;background:var(--yellow);border:var(--border);padding:4px 12px;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;box-shadow:var(--shadow);width:fit-content; }
+  .hero-name { font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(2.4rem,5vw,4.5rem);line-height:1;letter-spacing:-3px;margin-bottom:8px; }
+  .hero-name span { display:block;color:var(--red);-webkit-text-stroke:2px var(--black); }
+  .hero-subtitle { font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.5;margin-bottom:18px; }
+  .hero-role { font-size:0.88rem;line-height:1.8;max-width:400px;opacity:0.75;margin-bottom:26px; }
+  .hero-badges { display:flex;flex-wrap:wrap;gap:7px;margin-bottom:28px; }
+  .badge { background:var(--white);border:var(--border);padding:4px 12px;font-size:0.65rem;font-weight:700;letter-spacing:1px;box-shadow:var(--shadow); }
+  .hero-btns { display:flex;gap:12px;flex-wrap:wrap; }
+  .btn { font-family:'Space Mono',monospace;font-weight:700;font-size:0.82rem;padding:13px 26px;border:var(--border);cursor:pointer;transition:all 0.15s;text-decoration:none;display:inline-block;letter-spacing:1px; }
+  .btn-primary { background:var(--black);color:var(--yellow);box-shadow:var(--shadow); }
+  .btn-primary:hover { transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--red); }
+  .btn-outline { background:transparent;color:var(--black);box-shadow:var(--shadow); }
+  .btn-outline:hover { background:var(--yellow);transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--black); }
+  .hero-right { display:grid;grid-template-rows:1fr 1fr;overflow:hidden; }
+  .hero-avatar-block { background:var(--blue);border-bottom:var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:40px; }
+  .avatar-circle { width:190px;height:190px;border-radius:50%;border:var(--border);background:var(--white);box-shadow:var(--shadow-lg);display:flex;align-items:center;justify-content:center;font-size:4.5rem;position:relative;z-index:1;animation:float 3s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  .geo-shape { position:absolute;border:var(--border); }
+  .geo-1 { width:70px;height:70px;background:var(--yellow);top:20px;right:30px;animation:spin 8s linear infinite; }
+  @keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+  .geo-2 { width:55px;height:55px;border-radius:50%;background:var(--red);bottom:30px;left:40px; }
+  .geo-3 { width:0;height:0;border:none;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:52px solid var(--green);bottom:40px;right:60px;filter:drop-shadow(3px 3px 0 var(--black)); }
+  .hero-stats { background:var(--yellow);display:grid;grid-template-columns:1fr 1fr 1fr; }
+  .stat-box { padding:28px 20px;border-right:var(--border);display:flex;flex-direction:column;justify-content:center;transition:background 0.2s;cursor:default; }
+  .stat-box:last-child { border-right:none; }
+  .stat-box:hover { background:var(--black);color:var(--yellow); }
+  .stat-num { font-family:'Unbounded',sans-serif;font-size:2.2rem;font-weight:900;line-height:1;margin-bottom:4px; }
+  .stat-label { font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.7; }
+  .ticker { background:var(--black);color:var(--yellow);border-top:var(--border);border-bottom:var(--border);padding:12px 0;overflow:hidden;white-space:nowrap; }
+  .ticker-inner { display:inline-block;animation:ticker 28s linear infinite;font-family:'Unbounded',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:2px; }
+  @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  .ticker-sep { margin:0 28px;color:var(--red); }
+  #about { display:grid;grid-template-columns:1fr 1fr;border-top:var(--border); }
+  .about-left { background:var(--blue);padding:80px 60px;border-right:var(--border); }
+  .section-label { font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:var(--black);color:var(--yellow);padding:4px 10px;display:inline-block;margin-bottom:18px; }
+  .section-title { font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.1;letter-spacing:-2px;color:var(--white);margin-bottom:18px; }
+  .about-text { color:var(--white);line-height:1.8;font-size:0.83rem;margin-bottom:26px; }
+  .skill-tags { display:flex;flex-wrap:wrap;gap:7px; }
+  .skill-tag { background:var(--white);border:var(--border);padding:5px 12px;font-size:0.68rem;font-weight:700;box-shadow:var(--shadow);transition:all 0.15s;cursor:default; }
+  .skill-tag:hover { background:var(--yellow);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--black); }
+  .about-right { background:var(--white);padding:80px 60px; }
+  .competency-grid { display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px; }
+  .comp-box { border:var(--border);padding:20px;box-shadow:var(--shadow);transition:all 0.2s; }
+  .comp-box:hover { transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--black); }
+  .comp-icon { font-size:1.4rem;margin-bottom:7px; }
+  .comp-title { font-family:'Unbounded',sans-serif;font-weight:700;font-size:0.75rem;margin-bottom:7px;letter-spacing:-0.5px; }
+  .comp-list { font-size:0.66rem;line-height:2;opacity:0.7; }
+  #tools { background:var(--black);border-top:var(--border);padding:80px 60px; }
+  .tools-title { font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(1.8rem,3vw,2.8rem);letter-spacing:-2px;color:var(--yellow);margin-bottom:40px;margin-top:12px; }
+  .tools-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:3px solid #333; }
+  .tool-group { padding:26px;border-right:3px solid #333;border-bottom:3px solid #333; }
+  .tool-group:nth-child(3n) { border-right:none; }
+  .tool-group:nth-last-child(-n+3) { border-bottom:none; }
+  .tool-group-title { font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);margin-bottom:13px;padding-bottom:8px;border-bottom:1px solid #333; }
+  .tool-pills { display:flex;flex-wrap:wrap;gap:5px; }
+  .tool-pill { background:#1e1e1e;border:1.5px solid #333;color:#ccc;font-size:0.63rem;padding:3px 9px;font-weight:700;transition:all 0.15s;cursor:default; }
+  .tool-pill:hover { background:var(--yellow);color:var(--black);border-color:var(--yellow); }
+  #certs { display:grid;grid-template-columns:1fr 1fr;border-top:var(--border); }
+  .certs-left { background:var(--yellow);padding:80px 60px;border-right:var(--border); }
+  .certs-right { background:var(--white);padding:80px 60px; }
+  .cert-group { margin-bottom:22px; }
+  .cert-group-title { font-family:'Unbounded',sans-serif;font-weight:700;font-size:0.8rem;margin-bottom:9px;display:flex;align-items:center;gap:8px; }
+  .cert-item { font-size:0.72rem;line-height:2;opacity:0.7;padding-left:14px;border-left:2.5px solid var(--black); }
+  #work { border-top:var(--border);background:var(--white);padding:80px 60px; }
+  .work-header { display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px; }
+  .projects-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:var(--border);box-shadow:var(--shadow-lg); }
+  .project-card { border-right:var(--border);border-bottom:var(--border);padding:38px 30px;position:relative;overflow:hidden;transition:all 0.2s;cursor:pointer; }
+  .project-card:nth-child(2n) { border-right:none; }
+  .project-card:nth-child(3),.project-card:nth-child(4) { border-bottom:none; }
+  .project-card:hover .project-overlay { opacity:1;transform:translateY(0); }
+  .project-num { font-family:'Unbounded',sans-serif;font-weight:900;font-size:3.5rem;opacity:0.07;position:absolute;top:16px;right:16px;line-height:1;pointer-events:none; }
+  .project-icon { width:52px;height:52px;border:var(--border);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;box-shadow:var(--shadow); }
+  .project-card:nth-child(1) { background:var(--blue);color:var(--white); }
+  .project-card:nth-child(2) { background:var(--green); }
+  .project-card:nth-child(3) { background:var(--pink); }
+  .project-card:nth-child(4) { background:var(--yellow); }
+  .project-card:nth-child(1) .project-icon,.project-card:nth-child(2) .project-icon,.project-card:nth-child(3) .project-icon,.project-card:nth-child(4) .project-icon { background:var(--white);color:var(--black); }
+  .project-name { font-family:'Unbounded',sans-serif;font-weight:700;font-size:1rem;margin-bottom:9px;line-height:1.3; }
+  .project-desc { font-size:0.73rem;line-height:1.7;opacity:0.85;margin-bottom:14px; }
+  .project-tags { display:flex;gap:5px;flex-wrap:wrap; }
+  .project-tag { display:inline-block;background:var(--black);color:var(--yellow);font-size:0.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border:var(--border); }
+  .project-card:nth-child(1) .project-tag { background:var(--yellow);color:var(--black); }
+  .project-overlay { position:absolute;inset:0;background:var(--black);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-family:'Unbounded',sans-serif;font-weight:900;font-size:1rem;opacity:0;transform:translateY(100%);transition:all 0.3s;letter-spacing:2px; }
+  #timeline { display:grid;grid-template-columns:1fr 1fr;border-top:var(--border); }
+  .timeline-left { background:var(--black);padding:80px 60px;border-right:var(--border); }
+  .timeline-left .section-label { background:var(--yellow);color:var(--black); }
+  .timeline-left .section-title { color:var(--yellow); }
+  .tl-item { border-left:3px solid #333;padding-left:22px;margin-bottom:28px;position:relative;transition:all 0.2s; }
+  .tl-item::before { content:'';position:absolute;left:-8px;top:4px;width:12px;height:12px;background:var(--yellow);border:2px solid var(--black);border-radius:50%; }
+  .tl-item:hover { border-left-color:var(--yellow); }
+  .tl-year { font-size:0.6rem;font-weight:700;letter-spacing:2px;color:var(--yellow);margin-bottom:5px; }
+  .tl-role { font-family:'Unbounded',sans-serif;font-weight:700;font-size:0.85rem;color:var(--white);margin-bottom:3px;line-height:1.3; }
+  .tl-company { font-size:0.7rem;color:var(--yellow);margin-bottom:5px;font-weight:700; }
+  .tl-desc { font-size:0.68rem;color:#8892b0;line-height:1.7; }
+  .timeline-right { background:var(--white);padding:80px 60px; }
+  .edu-box { border:var(--border);padding:22px;box-shadow:var(--shadow);margin-bottom:18px;transition:all 0.2s; }
+  .edu-box:hover { transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--black); }
+  .edu-year { font-size:0.6rem;font-weight:700;letter-spacing:2px;color:var(--red);margin-bottom:5px; }
+  .edu-title { font-family:'Unbounded',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:3px; }
+  .edu-inst { font-size:0.7rem;opacity:0.6;margin-bottom:3px; }
+  .edu-detail { font-size:0.68rem;opacity:0.5;font-style:italic; }
+  #contact { display:grid;grid-template-columns:1fr 1fr;border-top:var(--border); }
+  .contact-left { background:var(--blue);padding:80px 60px;border-right:var(--border); }
+  .contact-left .section-title { color:var(--white); }
+  .contact-left .about-text { color:var(--white); }
+  .contact-info-row { display:flex;align-items:center;gap:14px;border:2px solid rgba(255,255,255,0.25);padding:15px 18px;margin-bottom:-2px;transition:background 0.15s; }
+  .contact-info-row:hover { background:rgba(255,255,255,0.1); }
+  .contact-icon { width:40px;height:40px;background:var(--white);border:2px solid var(--black);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;box-shadow:var(--shadow); }
+  .contact-detail { color:var(--white); }
+  .contact-detail strong { font-size:0.62rem;letter-spacing:1px;text-transform:uppercase;opacity:0.65;display:block;margin-bottom:2px; }
+  .contact-detail span { font-size:0.8rem;font-weight:700; }
+  .social-btns { display:flex;gap:10px;flex-wrap:wrap;margin-top:24px; }
+  .contact-right { background:var(--yellow);padding:80px 60px; }
+  .contact-title { font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.1;letter-spacing:-2px;margin-bottom:26px; }
+  .form-group { margin-bottom:12px; }
+  .form-group input,.form-group textarea,.form-group select { width:100%;background:var(--white);border:var(--border);padding:12px 15px;font-family:'Space Mono',monospace;font-size:0.8rem;outline:none;box-shadow:var(--shadow);transition:all 0.15s;resize:none;appearance:none; }
+  .form-group input:focus,.form-group textarea:focus { transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--black); }
+  .form-group textarea { height:100px; }
+  footer { background:var(--black);border-top:var(--border);padding:28px 60px;display:flex;justify-content:space-between;align-items:center; }
+  .footer-logo { font-family:'Unbounded',sans-serif;font-weight:900;font-size:0.95rem;letter-spacing:-1px;color:var(--yellow); }
+  .footer-copy { font-size:0.65rem;color:#555; }
+  .fab { position:fixed;bottom:32px;right:32px;width:58px;height:58px;background:var(--black);border:var(--border);border-radius:50%;box-shadow:var(--shadow-lg);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--yellow);cursor:pointer;transition:all 0.2s;z-index:98;text-decoration:none; }
+  .fab:hover { transform:rotate(45deg) scale(1.1);background:var(--red); }
+  .reveal { opacity:0;transform:translateY(40px);transition:opacity 0.6s ease,transform 0.6s ease; }
+  .reveal.visible { opacity:1;transform:translateY(0); }
+  @keyframes modalIn { from{opacity:0;transform:translateY(40px) scale(0.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+  .modal-tab { padding:12px 22px;font-family:'Space Mono',monospace;font-weight:700;font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;border:none;border-right:3px solid var(--black);background:transparent;cursor:pointer;transition:all 0.15s;flex-shrink:0; }
+  .modal-tab:hover { background:var(--yellow); }
+  .modal-tab.active { background:var(--black);color:var(--yellow); }
+  .modal-tab:last-child { border-right:none; }
+  .info-grid { display:grid;grid-template-columns:1fr 1fr;gap:18px; }
+  .info-box { border:3px solid var(--black);padding:18px;transition:all 0.2s; }
+  .info-box:hover { transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--black); }
+  .info-box h4 { font-family:'Unbounded',sans-serif;font-weight:700;font-size:0.78rem;margin-bottom:9px; }
+  .info-box p { font-size:0.73rem;line-height:1.7;opacity:0.75; }
+  .tech-pill { display:inline-block;background:var(--black);color:var(--yellow);font-size:0.6rem;font-weight:700;padding:3px 8px;margin:3px;border:2px solid var(--black);letter-spacing:1px; }
+  .process-step { display:flex;gap:14px;margin-bottom:15px;align-items:flex-start; }
+  .step-num { font-family:'Unbounded',sans-serif;font-weight:900;font-size:1.3rem;line-height:1;flex-shrink:0;width:34px; }
+  .step-content h5 { font-weight:700;font-size:0.8rem;margin-bottom:3px; }
+  .step-content p { font-size:0.7rem;opacity:0.7;line-height:1.6; }
+  .metric-row { display:flex;align-items:center;gap:14px;border:3px solid var(--black);padding:12px 18px;margin-bottom:-3px;transition:background 0.15s;cursor:default; }
+  .metric-row:hover { background:var(--yellow); }
+  .metric-val { font-family:'Unbounded',sans-serif;font-weight:900;font-size:1.35rem;min-width:68px; }
+  .metric-desc { font-size:0.7rem;opacity:0.7;line-height:1.5; }
+  .quote-box { border-left:4px solid var(--yellow);padding:14px 18px;background:#f9f9f0;margin-bottom:10px;font-size:0.76rem;line-height:1.7;font-style:italic; }
+  .quote-author { font-size:0.63rem;font-weight:700;opacity:0.6;margin-top:5px;font-style:normal;display:block; }
+  @media(max-width:900px) {
+    #hero,#about,#certs,#timeline,#contact { grid-template-columns:1fr; }
+    .hero-right { min-height:280px; }
+    .projects-grid { grid-template-columns:1fr; }
+    .project-card { border-right:none; }
+    .project-card:nth-child(3),.project-card:nth-child(4) { border-bottom:var(--border); }
+    .tools-grid { grid-template-columns:1fr 1fr; }
+    nav { padding:0 14px; }
+    .nav-links { gap:3px; }
+    .hero-left,.about-left,.about-right,.contact-left,.contact-right,.certs-left,.certs-right,.timeline-left,.timeline-right { padding:44px 24px; }
+    #work,#tools { padding:44px 24px; }
+    footer { flex-direction:column;gap:10px;text-align:center; }
+    .info-grid { grid-template-columns:1fr; }
+    .competency-grid { grid-template-columns:1fr; }
+    #modal-box { margin:20px; }
+    #modal-header { padding:24px 24px 0; }
+    #modal-body { padding:24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">IN\✦</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#timeline">Journey</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">\✦ Senior Product &amp; UX Design Leader</div>
+    <h1 class="hero-name">
+      Ismil
+      <span>Nadaf</span>
+    </h1>
+    <p class="hero-subtitle">Specialist · Strategist · Designer · Leader</p>
+    <p class="hero-role">
+      I firmly believe technology has the power to revolutionize the way we learn, communicate, and create.
+      My mission is to craft products and services that bridge the gap between humans and technology,
+      empowering individuals to reach their full potential.
+    </p>
+    <div class="hero-badges">
+      <span class="badge">Product Design</span>
+      <span class="badge">UX Strategy</span>
+      <span class="badge">AI &amp; Innovation</span>
+      <span class="badge">Design Leadership</span>
+      <span class="badge">Pune, India \📍</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#work" class="btn btn-primary">View Case Studies \→</a>
+      <a href="https://www.linkedin.com/in/ismil-nadaf-a31b7529/" target="_blank" class="btn btn-outline">LinkedIn \↗</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-avatar-block">
+      <div class="geo-shape geo-1"></div>
+      <div class="geo-shape geo-2"></div>
+      <div class="geo-3"></div>
+      <div class="avatar-circle">\🎨</div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box"><div class="stat-num">14+</div><div class="stat-label">Years Exp.</div></div>
+      <div class="stat-box"><div class="stat-num">14+</div><div class="stat-label">Digital Yrs</div></div>
+      <div class="stat-box"><div class="stat-num">\🌍</div><div class="stat-label">Global</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    PRODUCT DESIGN <span class="ticker-sep">\✦</span> UX STRATEGY <span class="ticker-sep">\✦</span> DESIGN SYSTEMS <span class="ticker-sep">\✦</span> AGENTIC UX <span class="ticker-sep">\✦</span> AI-POWERED DESIGN <span class="ticker-sep">\✦</span> HUMAN-CENTRIC <span class="ticker-sep">\✦</span> ACCESSIBILITY <span class="ticker-sep">\✦</span> BANKING · HEALTHCARE · FINTECH <span class="ticker-sep">\✦</span> MOBILE-FIRST <span class="ticker-sep">\✦</span> DESIGN LEADERSHIP <span class="ticker-sep">\✦</span> PROMPT ENGINEERING <span class="ticker-sep">\✦</span> GENUI &amp; VUI <span class="ticker-sep">\✦</span> USABILITY TESTING <span class="ticker-sep">\✦</span> PRODUCT DESIGN <span class="ticker-sep">\✦</span> UX STRATEGY <span class="ticker-sep">\✦</span> DESIGN SYSTEMS <span class="ticker-sep">\✦</span> AGENTIC UX <span class="ticker-sep">\✦</span> AI-POWERED DESIGN <span class="ticker-sep">\✦</span> HUMAN-CENTRIC <span class="ticker-sep">\✦</span> ACCESSIBILITY <span class="ticker-sep">\✦</span> BANKING · HEALTHCARE · FINTECH <span class="ticker-sep">\✦</span> MOBILE-FIRST <span class="ticker-sep">\✦</span> DESIGN LEADERSHIP <span class="ticker-sep">\✦</span> PROMPT ENGINEERING <span class="ticker-sep">\✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-left reveal">
+    <div class="section-label">01 — About</div>
+    <h2 class="section-title">Professional Overview</h2>
+    <p class="about-text">
+      Over 17 years of industry experience with 14 years exclusively focused on digital transformation across global regions.
+      Specialized in human-centric design across diverse business verticals including Software Development, Banking,
+      Financial Services, E-commerce, and Healthcare.
+      <br><br>
+      Based in Pune, Maharashtra, India — delivering solutions across multiple continents with a consistent mobile-first philosophy.
+    </p>
+    <div class="skill-tags">
+      <span class="skill-tag">Human-Centric Design</span>
+      <span class="skill-tag">UX Management</span>
+      <span class="skill-tag">Design Strategy</span>
+      <span class="skill-tag">Mentoring</span>
+      <span class="skill-tag">Prompt Engineering</span>
+      <span class="skill-tag">GenUI &amp; VUI</span>
+      <span class="skill-tag">Agentic UX</span>
+      <span class="skill-tag">Vibe Coding</span>
+      <span class="skill-tag">Accessibility</span>
+      <span class="skill-tag">Usability Testing</span>
+      <span class="skill-tag">Mobile-First</span>
+      <span class="skill-tag">Cross-Functional</span>
+    </div>
+  </div>
+  <div class="about-right reveal">
+    <div class="section-label">By the Numbers</div>
+    <h3 style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-1px;margin-bottom:24px;margin-top:12px;">Impact at a Glance</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--border);box-shadow:var(--shadow-lg);margin-bottom:22px;">
+      <div style="padding:28px 24px;border-right:var(--border);border-bottom:var(--border);">
+        <div style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:2.2rem;line-height:1;margin-bottom:6px;">14+</div>
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.6;">Years of Experience</div>
+      </div>
+      <div style="padding:28px 24px;border-bottom:var(--border);background:var(--yellow);">
+        <div style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:2.2rem;line-height:1;margin-bottom:6px;">$8M+</div>
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.6;">Revenue Generated</div>
+      </div>
+      <div style="padding:28px 24px;border-right:var(--border);background:var(--blue);color:var(--white);">
+        <div style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:2.2rem;line-height:1;margin-bottom:6px;">50+</div>
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.7;">Projects Delivered</div>
+      </div>
+      <div style="padding:28px 24px;">
+        <div style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:2.2rem;line-height:1;margin-bottom:6px;">5+</div>
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.6;">Global Verticals</div>
+      </div>
+    </div>
+    <div style="border:var(--border);padding:24px;box-shadow:var(--shadow);margin-bottom:16px;">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.5;margin-bottom:12px;">Industries Served</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="border:var(--border);padding:6px 14px;font-size:0.68rem;font-weight:700;box-shadow:2px 2px 0 var(--black);">🏦 Banking &amp; Finance</span>
+        <span style="border:var(--border);padding:6px 14px;font-size:0.68rem;font-weight:700;box-shadow:2px 2px 0 var(--black);background:var(--yellow);">🏥 Healthcare</span>
+        <span style="border:var(--border);padding:6px 14px;font-size:0.68rem;font-weight:700;box-shadow:2px 2px 0 var(--black);">🛒 E-Commerce</span>
+        <span style="border:var(--border);padding:6px 14px;font-size:0.68rem;font-weight:700;box-shadow:2px 2px 0 var(--black);">💻 Enterprise Software</span>
+        <span style="border:var(--border);padding:6px 14px;font-size:0.68rem;font-weight:700;box-shadow:2px 2px 0 var(--black);background:var(--blue);color:var(--white);">🌍 Multi-Continental</span>
+        <span style="border:var(--border);padding:6px 14px;font-size:0.68rem;font-weight:700;box-shadow:2px 2px 0 var(--black);">⚡ Electrical Power</span>
+      </div>
+    </div>
+    <div style="border:var(--border);padding:24px;box-shadow:var(--shadow);background:var(--black);color:var(--white);">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;color:var(--yellow);">Design Philosophy</div>
+      <div style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:0.88rem;line-height:1.5;margin-bottom:8px;">"Design is not decoration — it is the architecture of understanding."</div>
+      <div style="font-size:0.7rem;line-height:1.8;opacity:0.7;">Every pixel has a purpose. Every interaction builds trust. Every product should feel inevitable once it exists.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="work-header reveal">
+    <div>
+      <div class="section-label">04 — Projects</div>
+      <h2 style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);letter-spacing:-2px;margin-top:12px;">Featured Projects</h2>
+    </div>
+    <a href="#contact" class="btn btn-outline">Work With Me \→</a>
+  </div>
+  <p style="font-size:0.78rem;opacity:0.6;margin-bottom:32px;" class="reveal">Click any project to explore the full case study \→</p>
+  <div class="projects-grid reveal">
+    <div class="project-card" onclick="openProject(0)">
+      <div class="project-num">01</div>
+      <div class="project-icon">\☁\️</div>
+      <div class="project-name">DocuBuilder — Cloud Publishing Platform</div>
+      <div class="project-desc">Automated publishing for financial services — reduced document creation from 5\–7 hours to 90 minutes. $2.3M annual cost savings.</div>
+      <div class="project-tags"><span class="project-tag">Automation</span><span class="project-tag">Fintech</span><span class="project-tag">78% Faster</span></div>
+      <div class="project-overlay">VIEW CASE STUDY \→</div>
+    </div>
+    <div class="project-card" onclick="openProject(1)">
+      <div class="project-num">02</div>
+      <div class="project-icon">\💬</div>
+      <div class="project-name">Weconnect — Conversational Marketing</div>
+      <div class="project-desc">AI-powered no-code chatbot platform — 2,450 businesses in 3 months, 78% activation rate, SUS score 86.</div>
+      <div class="project-tags"><span class="project-tag">AI-Powered</span><span class="project-tag">No-Code</span><span class="project-tag">SUS 86</span></div>
+      <div class="project-overlay">VIEW CASE STUDY \→</div>
+    </div>
+    <div class="project-card" onclick="openProject(2)">
+      <div class="project-num">03</div>
+      <div class="project-icon">\🚁</div>
+      <div class="project-name">HIBI — Drone Tower Inspection</div>
+      <div class="project-desc">Drone-based UX for high tension tower health monitoring — 75% faster inspection, 85% cost savings vs helicopter.</div>
+      <div class="project-tags"><span class="project-tag">Industrial UX</span><span class="project-tag">Drone Tech</span><span class="project-tag">AI Detection</span></div>
+      <div class="project-overlay">VIEW CASE STUDY \→</div>
+    </div>
+    <div class="project-card" onclick="openProject(3)">
+      <div class="project-num">04</div>
+      <div class="project-icon">\🚀</div>
+      <div class="project-name">Rocket Uniface — Enterprise UX</div>
+      <div class="project-desc">Low-code platform on Fluent Design System — 100% licensing cost elimination, 65% faster development at Rocket Software.</div>
+      <div class="project-tags"><span class="project-tag">Enterprise</span><span class="project-tag">Low-Code</span><span class="project-tag">Fluent DS</span></div>
+      <div class="project-overlay">VIEW CASE STUDY \→</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="timeline-left reveal">
+    <div class="section-label">05 — Journey</div>
+    <h2 class="section-title" style="margin-top:12px;">Career Timeline</h2>
+    <div class="tl-item">
+      <div class="tl-year">2021 — PRESENT</div>
+      <div class="tl-role">Senior UX Designer P4 / Project Lead</div>
+      <div class="tl-company">Rocket Software</div>
+      <div class="tl-desc">Architected design systems and led AI integration initiatives, driving innovation in enterprise software and establishing UX best practices across global teams.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2021</div>
+      <div class="tl-role">Senior UX / UI Consultant</div>
+      <div class="tl-company">Adroient ITES / Hitachi Vantara</div>
+      <div class="tl-desc">Led UX for AI-powered (machine learning) high tension tower health monitoring system — implementing cutting-edge predictive analytics interfaces for critical infrastructure.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2013 — 2021</div>
+      <div class="tl-role">Senior UX / UI Designer / Developer</div>
+      <div class="tl-company">AIT Global India</div>
+      <div class="tl-desc">Delivered transformative solutions generating $8M revenue across banking, financial services, e-commerce, and healthcare — mobile-first focus throughout.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2009 — 2013</div>
+      <div class="tl-role">Web Designer</div>
+      <div class="tl-company">WIZETRON</div>
+      <div class="tl-desc">Built foundation in digital design and web development — establishing core skills in user-centered design and front-end development.</div>
+    </div>
+  </div>
+  <div class="timeline-right reveal">
+    <div class="section-label">Recognition &amp; Impact</div>
+    <h3 style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:-1px;margin-bottom:22px;margin-top:12px;">Highlights Across the Journey</h3>
+    <div style="border:var(--border);padding:24px;box-shadow:var(--shadow-lg);background:var(--yellow);margin-bottom:16px;">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.6;margin-bottom:10px;">Career Milestone</div>
+      <div style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:1.6rem;line-height:1;margin-bottom:8px;">$8M+</div>
+      <div style="font-size:0.72rem;line-height:1.8;opacity:0.75;">Revenue generated through transformative UX solutions across banking, financial services, e-commerce, and healthcare — over 17+ years of focused human-centric design.</div>
+    </div>
+    <div style="border:var(--border);padding:22px;box-shadow:var(--shadow);margin-bottom:16px;background:var(--blue);color:var(--white);">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.6;margin-bottom:10px;color:var(--yellow);">Global Footprint 🌍</div>
+      <div style="font-size:0.72rem;line-height:1.8;opacity:0.85;">Delivered design solutions across multiple continents — building products used by people in diverse cultural and regulatory contexts throughout Asia, Europe, and the Americas.</div>
+    </div>
+    <div style="border:var(--border);padding:22px;box-shadow:var(--shadow);margin-bottom:16px;">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.5;margin-bottom:14px;">Education &amp; Continuous Learning</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="border-left:3px solid var(--black);padding-left:14px;">
+          <div style="font-weight:700;font-size:0.75rem;margin-bottom:2px;">IxDF — Interaction Design Foundation</div>
+          <div style="font-size:0.67rem;opacity:0.6;">UX Management: Strategy &amp; Tactics · 2019–2021</div>
+        </div>
+        <div style="border-left:3px solid var(--yellow);padding-left:14px;">
+          <div style="font-weight:700;font-size:0.75rem;margin-bottom:2px;">Bachelor of Computer Application</div>
+          <div style="font-size:0.67rem;opacity:0.6;">SunRise University, Rajasthan · 2013–2015</div>
+        </div>
+        <div style="border-left:3px solid var(--blue);padding-left:14px;">
+          <div style="font-weight:700;font-size:0.75rem;margin-bottom:2px;">Ongoing: AI, GenUI &amp; Agentic UX</div>
+          <div style="font-size:0.67rem;opacity:0.6;">Self-directed learning in emerging design frontiers</div>
+        </div>
+      </div>
+    </div>
+    <div style="border:var(--border);padding:22px;box-shadow:var(--shadow);background:var(--black);color:var(--white);">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;color:var(--yellow);">What Drives Me</div>
+      <div style="font-size:0.72rem;line-height:1.9;opacity:0.8;">I believe the best design is invisible — it removes friction so completely that users never think about the interface, only the outcome. That pursuit has guided every role, every project, every decision for 17 years.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-left reveal">
+    <div class="section-label" style="background:var(--white);color:var(--black);">06 — Connect</div>
+    <h2 class="section-title" style="margin-top:12px;">Ready to Transform Your Digital Experience?</h2>
+    <p class="about-text">With 14+ years of expertise in Product &amp; UX design and digital transformation, I bring strategic vision and proven results. Let's collaborate to create innovative, human-centered solutions that drive business growth.</p>
+
+    <div class="contact-info-row">
+      <div class="contact-icon">\📍</div>
+      <div class="contact-detail"><strong>Location</strong><span>Pune, Maharashtra, India</span></div>
+    </div>
+
+    <div class="social-btns">
+      <a href="https://www.linkedin.com/in/ismil-nadaf-a31b7529/" target="_blank" class="btn btn-outline" style="background:var(--white);">LinkedIn \↗</a>
+    </div>
+  </div>
+  <div class="contact-right reveal">
+    <div class="section-label">Send a Message</div>
+    <div class="contact-title">Let's build something<br><span style="color:var(--red);">remarkable.</span></div>
+    <form onsubmit="handleForm(event)">
+      <div class="form-group"><input type="text" placeholder="Your Name" required /></div>
+      <div class="form-group"><input type="email" placeholder="your@email.com" required /></div>
+      <div class="form-group"><input type="text" placeholder="Company / Organisation" /></div>
+      <div class="form-group">
+        <select>
+          <option value="">Project Type...</option>
+          <option>Product Design</option>
+          <option>UX Strategy</option>
+          <option>Design System</option>
+          <option>AI / GenUI Design</option>
+          <option>Accessibility Audit</option>
+          <option>Usability Research</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><textarea placeholder="Tell me about your project..." required></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;text-align:center;box-shadow:var(--shadow-lg);">Send Message \→</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">ISMIL NADAF\✦</div>
+  <div class="footer-copy">© 2026 — Crafted with passion for human-centered design · Pune, Maharashtra, India</div>
+</footer>
+
+<a href="#contact" class="fab" title="Get in touch">+</a>
+
+<!-- PROJECT MODAL -->
+<div id="project-modal" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(17,17,17,0.88);backdrop-filter:blur(4px);overflow-y:auto;" onclick="handleModalClick(event)">
+  <div id="modal-box" style="background:var(--white);border:3px solid var(--black);box-shadow:12px 12px 0 var(--black);max-width:900px;margin:60px auto 60px;position:relative;">
+    <div id="modal-header" style="padding:38px 46px 0;"></div>
+    <div id="modal-tabs" style="display:flex;border-bottom:3px solid var(--black);margin-top:26px;overflow-x:auto;"></div>
+    <div id="modal-body" style="padding:34px 46px 34px;min-height:360px;"></div>
+    <button onclick="closeProject()" style="position:absolute;top:16px;right:16px;width:42px;height:42px;background:var(--black);color:var(--yellow);border:3px solid var(--black);font-family:'Space Mono',monospace;font-weight:900;font-size:1rem;cursor:pointer;box-shadow:3px 3px 0 var(--yellow);display:flex;align-items:center;justify-content:center;" onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='var(--black)'">\✕</button>
+    <div style="display:flex;justify-content:space-between;padding:18px 46px 34px;border-top:3px solid var(--black);gap:12px;">
+      <button onclick="prevProject()" class="btn btn-outline" style="font-size:0.76rem;">\← Prev</button>
+      <button onclick="nextProject()" class="btn btn-primary" style="font-size:0.76rem;">Next \→</button>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  function handleForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.textContent = '\✓ Message Sent!';
+    btn.style.background = 'var(--green)';
+    setTimeout(() => { btn.textContent = 'Send Message \→'; btn.style.background = ''; }, 3500);
+  }
+
+  const PROJECTS = [
+    {
+      emoji:'\☁\️', title:'DocuBuilder — Cloud-Based Automated Publishing Platform',
+      tag:'Financial Services · Enterprise', color:'#3B6FE0',
+      year:'Rocket Software', role:'Senior UX Designer P4 / Project Lead',
+      tabs:['Story','Empathize','Define','Ideate','Prototype','Test','Solution','Results'],
+      renderTab(tab) {
+
+        /* ── shared timeline CSS injected once ── */
+        const TL_STYLE = `<style>
+          .tl-wrap{position:relative;padding-left:36px;margin-top:4px;}
+          .tl-wrap::before{content:'';position:absolute;left:9px;top:6px;bottom:0;width:2px;background:var(--black);opacity:.15;}
+          .tl-entry{position:relative;margin-bottom:24px;}
+          .tl-dot{position:absolute;left:-32px;top:4px;width:16px;height:16px;border-radius:50%;border:2px solid var(--black);flex-shrink:0;}
+          .tl-card{border:2px solid var(--black);padding:16px 20px;box-shadow:3px 3px 0 var(--black);transition:transform .15s;}
+          .tl-card:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--black);}
+          .tl-label{font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;opacity:.6;}
+          .tl-title{font-family:'Unbounded',sans-serif;font-weight:700;font-size:.82rem;margin-bottom:6px;line-height:1.3;}
+          .tl-body{font-size:.72rem;line-height:1.75;opacity:.78;}
+          .phase-banner{display:flex;align-items:center;gap:16px;padding:18px 22px;border:2px solid var(--black);box-shadow:4px 4px 0 var(--black);margin-bottom:22px;}
+          .phase-num{font-family:'Unbounded',sans-serif;font-weight:900;font-size:2.8rem;line-height:1;opacity:.12;position:absolute;right:18px;top:10px;}
+          .phase-inner{position:relative;flex:1;}
+          .phase-tag{font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--black);color:var(--yellow);padding:2px 8px;display:inline-block;margin-bottom:6px;}
+          .phase-heading{font-family:'Unbounded',sans-serif;font-weight:900;font-size:1rem;line-height:1.2;margin-bottom:4px;}
+          .phase-sub{font-size:.7rem;opacity:.65;line-height:1.5;}
+          .stat-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;}
+          .stat-chip{border:2px solid var(--black);padding:8px 14px;box-shadow:2px 2px 0 var(--black);}
+          .stat-chip strong{font-family:'Unbounded',sans-serif;font-size:1.1rem;font-weight:900;display:block;line-height:1;}
+          .stat-chip span{font-size:.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.6;}
+          .pill-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+          .insight-strip{border-left:4px solid var(--black);padding:12px 16px;margin-bottom:10px;font-size:.73rem;line-height:1.7;}
+          .insight-strip strong{font-family:'Unbounded',sans-serif;font-size:.75rem;display:block;margin-bottom:3px;}
+          .persona-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+          .persona-card{border:2px solid var(--black);padding:14px;box-shadow:3px 3px 0 var(--black);}
+          .persona-card .p-emoji{font-size:1.4rem;margin-bottom:6px;}
+          .persona-card .p-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:.72rem;margin-bottom:2px;}
+          .persona-card .p-role{font-size:.62rem;opacity:.6;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+          .persona-card .p-need{font-size:.68rem;line-height:1.6;opacity:.78;}
+          .hmw-list{list-style:none;margin:0;padding:0;}
+          .hmw-item{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border:2px solid var(--black);margin-bottom:-2px;font-size:.72rem;line-height:1.6;}
+          .hmw-item:hover{background:var(--yellow);}
+          .hmw-num{font-family:'Unbounded',sans-serif;font-weight:900;font-size:.95rem;flex-shrink:0;width:26px;opacity:.35;}
+          .concept-block{border:2px solid var(--black);padding:14px 18px;margin-bottom:-2px;display:flex;gap:14px;align-items:flex-start;transition:background .15s;}
+          .concept-block:hover{background:var(--yellow);}
+          .concept-letter{font-family:'Unbounded',sans-serif;font-weight:900;font-size:1.3rem;flex-shrink:0;line-height:1;}
+          .concept-text h6{font-weight:700;font-size:.78rem;margin-bottom:4px;}
+          .concept-text p{font-size:.7rem;line-height:1.65;opacity:.75;}
+          .pivot-card{border:3px solid var(--black);padding:18px 20px;background:var(--black);color:var(--yellow);box-shadow:5px 5px 0 var(--yellow);margin:14px 0;}
+          .pivot-card h6{font-family:'Unbounded',sans-serif;font-weight:900;font-size:.88rem;margin-bottom:8px;}
+          .pivot-card p{font-size:.72rem;line-height:1.7;opacity:.85;color:var(--yellow);}
+          .fix-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+          .fix-before{border:2px solid var(--black);padding:12px;background:#fff5f5;font-size:.7rem;line-height:1.6;}
+          .fix-after{border:2px solid var(--black);padding:12px;background:#f0fff5;font-size:.7rem;line-height:1.6;}
+          .fix-label{font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;opacity:.55;}
+          .outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--black);margin-bottom:14px;}
+          .outcome-cell{padding:16px 10px;border-right:2px solid var(--black);text-align:center;}
+          .outcome-cell:last-child{border-right:none;}
+          .outcome-cell strong{font-family:'Unbounded',sans-serif;font-size:1.3rem;font-weight:900;display:block;line-height:1;margin-bottom:4px;}
+          .outcome-cell span{font-size:.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.6;line-height:1.4;display:block;}
+          .solution-tl .tl-card{border-left:4px solid;}
+          .learned-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+          .learned-box{border:2px solid var(--black);padding:14px;box-shadow:3px 3px 0 var(--black);}
+          .learned-box h6{font-family:'Unbounded',sans-serif;font-weight:700;font-size:.75rem;margin-bottom:8px;}
+          .learned-box li{font-size:.7rem;line-height:1.8;opacity:.78;list-style:none;padding-left:12px;border-left:2px solid currentColor;}
+          .takeaway-box{border:2px solid var(--black);padding:18px;background:var(--black);color:var(--yellow);margin-top:14px;box-shadow:5px 5px 0 var(--yellow);}
+          .takeaway-box p{font-size:.76rem;line-height:1.8;opacity:.9;}
+        </style>`;
+
+        if(tab==='Story') return TL_STYLE + `
+          <div class="outcome-grid" style="margin-bottom:20px;">
+            <div class="outcome-cell" style="background:var(--blue);color:#fff;"><strong>78%</strong><span>Faster Doc Creation</span></div>
+            <div class="outcome-cell" style="background:var(--green);"><strong>89%</strong><span>Error Reduction</span></div>
+            <div class="outcome-cell" style="background:var(--yellow);"><strong>$2.3M</strong><span>Annual Savings</span></div>
+            <div class="outcome-cell" style="background:var(--red);color:#fff;"><strong>92%</strong><span>Feature Adoption</span></div>
+          </div>
+          <div class="tl-wrap">
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--yellow);"></div>
+              <div class="tl-card" style="background:var(--white);">
+                <div class="tl-label">7:00 AM — Monday Morning</div>
+                <div class="tl-title">A Day in Sarah's Life</div>
+                <div class="tl-body">Sarah Chen, Senior Investment Analyst, has two hours before a client call. Her task: build a fund fact sheet from scratch. She opens Bloomberg Terminal, screenshots a data table, pastes it into Excel to reformat, then manually copies numbers into an InDesign template — one figure at a time. She cross-references three other systems. Two hours later, the sheet is done. But one decimal is wrong. The correction takes 20 more minutes.</div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--red);"></div>
+              <div class="tl-card" style="background:#fff5f5;border-color:var(--red);">
+                <div class="tl-label">The Painful Reality</div>
+                <div class="tl-title">This happened. Every. Single. Month.</div>
+                <div class="tl-body">For thousands of analysts across the industry. Not a personal failure — a systemic one. The tools were broken. The workflow was broken. And nobody had rethought it from first principles. Until now.</div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--blue);"></div>
+              <div class="tl-card" style="background:var(--white);">
+                <div class="tl-label">Our Approach</div>
+                <div class="tl-title">5 Stages of Design Thinking</div>
+                <div class="tl-body">Not a quick patch — a full rethink of how financial documents get made. Each stage built on the last. Each assumption was challenged. Every decision rooted in what real users actually needed.</div>
+                <div class="pill-row" style="margin-top:12px;">
+                  ${[['🔍','Empathize'],['🎯','Define'],['💡','Ideate'],['🛠️','Prototype'],['🧪','Test']].map(([e,l])=>`<span class="tech-pill" style="background:var(--black);color:var(--yellow);font-size:.62rem;padding:4px 10px;">${e} ${l}</span>`).join('')}
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Empathize') return TL_STYLE + `
+          <div class="phase-banner" style="background:var(--blue);color:#fff;position:relative;overflow:hidden;">
+            <div style="font-size:2rem;">🔍</div>
+            <div class="phase-inner">
+              <div class="phase-tag" style="background:#fff;color:var(--blue);">Phase 01 — Empathize</div>
+              <div class="phase-heading" style="color:#fff;">Listening Before Solving</div>
+              <div class="phase-sub" style="color:rgba(255,255,255,.7);">We didn't open Figma. We went into the field and watched.</div>
+            </div>
+            <div class="phase-num" style="color:#fff;">01</div>
+          </div>
+          <div class="stat-chips">
+            <div class="stat-chip" style="background:var(--white);"><strong>18</strong><span>Interviews · 4 Institutions</span></div>
+            <div class="stat-chip" style="background:var(--yellow);"><strong>12</strong><span>Contextual Inquiry Sessions</span></div>
+            <div class="stat-chip" style="background:var(--white);"><strong>450+</strong><span>Support Tickets Analyzed</span></div>
+            <div class="stat-chip" style="background:var(--white);"><strong>8</strong><span>Diary Study Participants · 2 Weeks</span></div>
+          </div>
+          <div class="tl-wrap">
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--blue);"></div>
+              <div class="tl-card">
+                <div class="tl-label">What We Heard</div>
+                <div class="tl-title">In Their Own Words</div>
+                <div class="insight-strip" style="border-color:var(--blue);background:#f0f4ff;margin-top:10px;">"I spend 4 hours every month copying data from Bloomberg into InDesign. If I make one error, I lose client trust." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Sarah Chen, Investment Analyst</strong></div>
+                <div class="insight-strip" style="border-color:var(--green);background:#f0fff5;">"I can't tell what changed between versions without comparing PDFs line by line. It's a nightmare." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Michael Rodriguez, Compliance Officer</strong></div>
+                <div class="insight-strip" style="border-color:var(--pink);background:#fff0f7;">"When our logo changes, I manually update 200+ templates. It takes three weeks." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Jennifer Park, Marketing Operations Manager</strong></div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--red);"></div>
+              <div class="tl-card">
+                <div class="tl-label">What We Observed — The Invisible Problems</div>
+                <div class="tl-title">What They Didn't Say Out Loud</div>
+                <div class="tl-body">Users didn't volunteer their biggest pain — <strong>context switching</strong>. We counted the tools a typical analyst touched during document production: between <strong>5 and 7 different apps</strong> in a single session. Every switch added cognitive load. Every switch was a potential error.<br><br>We also uncovered an invisible problem: <strong>automation anxiety</strong>. Users feared 'black box' systems that made decisions they couldn't verify or undo. They didn't distrust technology — they distrusted opacity.</div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--yellow);border-color:var(--black);"></div>
+              <div class="tl-card">
+                <div class="tl-label">The People We Were Designing For</div>
+                <div class="tl-title">3 Personas, 3 Different Needs</div>
+                <div class="persona-row">
+                  <div class="persona-card" style="border-top:3px solid var(--blue);">
+                    <div class="p-emoji">👩‍💼</div>
+                    <div class="p-name">Sarah, 32</div>
+                    <div class="p-role">Investment Analyst</div>
+                    <div class="p-need">Needs accuracy without manual copying. Terrified of errors that cost client trust.</div>
+                  </div>
+                  <div class="persona-card" style="border-top:3px solid var(--green);">
+                    <div class="p-emoji">👨‍💼</div>
+                    <div class="p-name">Michael, 45</div>
+                    <div class="p-role">Compliance Officer</div>
+                    <div class="p-need">Needs version clarity and audit trails. Every undocumented change is a liability.</div>
+                  </div>
+                  <div class="persona-card" style="border-top:3px solid var(--pink);">
+                    <div class="p-emoji">👩‍💻</div>
+                    <div class="p-name">Jennifer, 38</div>
+                    <div class="p-role">Marketing Ops Manager</div>
+                    <div class="p-need">Needs scalable template management without depending on IT for every update.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Define') return TL_STYLE + `
+          <div class="phase-banner" style="background:var(--green);position:relative;overflow:hidden;">
+            <div style="font-size:2rem;">🎯</div>
+            <div class="phase-inner">
+              <div class="phase-tag">Phase 02 — Define</div>
+              <div class="phase-heading">Naming the Real Problem</div>
+              <div class="phase-sub">'Document creation takes too long' was masking something much deeper.</div>
+            </div>
+            <div class="phase-num">02</div>
+          </div>
+          <div class="tl-wrap">
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--green);"></div>
+              <div class="tl-card" style="background:var(--yellow);border-color:var(--black);">
+                <div class="tl-label">Point of View — Problem Statement</div>
+                <div class="tl-body" style="font-style:italic;font-size:.76rem;">"Financial analysts need a way to produce accurate, compliant documents without switching tools or manually copying data — because every manual step is a trust risk, a productivity loss, and a potential compliance failure."</div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--blue);"></div>
+              <div class="tl-card">
+                <div class="tl-label">4 Key Insights That Shaped Everything</div>
+                <div class="tl-title">What the Research Was Really Telling Us</div>
+                <div class="insight-strip" style="border-color:var(--blue);background:#f0f4ff;margin-top:10px;"><strong>01 — The Trust Gap</strong>Users wouldn't adopt automation unless they could see exactly where data came from. The 'black box' was the enemy of adoption.</div>
+                <div class="insight-strip" style="border-color:var(--green);background:#f0fff5;"><strong>02 — The Control Paradox</strong>Users desperately wanted automation but feared losing control. They needed overrides that were safe, not catastrophic.</div>
+                <div class="insight-strip" style="border-color:var(--red);background:#fff5f5;"><strong>03 — Context Switching is the Productivity Killer</strong>Moving between 5–7 tools wasn't just annoying — it was the single largest source of error. Every switch was a seam where mistakes could go unnoticed.</div>
+                <div class="insight-strip" style="border-color:var(--pink);background:#fff0f7;"><strong>04 — Collaboration is Asynchronous</strong>Teams were spread across time zones. They needed crystal-clear status visibility and a reliable way to leave and pick up where they left off.</div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--black);"></div>
+              <div class="tl-card">
+                <div class="tl-label">Design Principles — Our North Star</div>
+                <div class="tl-title">Living Criteria for Every Decision</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;">
+                  ${[['Transparent by Default','Users must always see and verify data sources'],['Forgiving & Reversible','Every automated action must be safely undoable'],['Context over Clicks','Show the right info in the right place'],['Progressive Disclosure','Lead with essentials, reveal complexity on demand'],['Clarity over Cleverness','Predictable beats impressive-but-confusing']].map(([t,d])=>`<div style="border:2px solid var(--black);padding:10px;box-shadow:2px 2px 0 var(--black);font-size:.68rem;"><strong style="font-family:'Unbounded',sans-serif;font-size:.65rem;display:block;margin-bottom:3px;">${t}</strong>${d}</div>`).join('')}
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Ideate') return TL_STYLE + `
+          <div class="phase-banner" style="background:var(--yellow);position:relative;overflow:hidden;">
+            <div style="font-size:2rem;">💡</div>
+            <div class="phase-inner">
+              <div class="phase-tag">Phase 03 — Ideate</div>
+              <div class="phase-heading">Generating Bold Ideas</div>
+              <div class="phase-sub">Cross-functional workshops. Generate without judgment. Filter ruthlessly.</div>
+            </div>
+            <div class="phase-num">03</div>
+          </div>
+          <div class="tl-wrap">
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--yellow);border-color:var(--black);"></div>
+              <div class="tl-card">
+                <div class="tl-label">How Might We...? Workshop Questions</div>
+                <div class="tl-title">5 Questions That Unlocked the Design Space</div>
+                <ul class="hmw-list" style="margin-top:10px;">
+                  <li class="hmw-item"><span class="hmw-num">01</span>How might we make data sources visible without cluttering the interface?</li>
+                  <li class="hmw-item"><span class="hmw-num">02</span>How might we let users override automation without destabilizing the document?</li>
+                  <li class="hmw-item"><span class="hmw-num">03</span>How might we eliminate the need to switch between tools during document creation?</li>
+                  <li class="hmw-item"><span class="hmw-num">04</span>How might we make the review process for a compliance officer feel effortless?</li>
+                  <li class="hmw-item"><span class="hmw-num">05</span>How might we let a marketing manager update 200 templates in the time it takes to update one?</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--black);"></div>
+              <div class="tl-card">
+                <div class="tl-label">After 4 Ideation Sessions + Prioritization Matrix</div>
+                <div class="tl-title">5 Concepts That Survived</div>
+                <div style="margin-top:10px;">
+                  <div class="concept-block" style="border-top:2px solid var(--black);">
+                    <span class="concept-letter" style="color:var(--blue);">A</span>
+                    <div class="concept-text"><h6>Data Field Inspector</h6><p>Hover state on any data field showing its source, freshness timestamp, and transformation logic. One click to override. Solves the trust problem at the moment of doubt.</p></div>
+                  </div>
+                  <div class="concept-block">
+                    <span class="concept-letter" style="color:var(--green);">B</span>
+                    <div class="concept-text"><h6>Smart Template Editor</h6><p>Drag-and-drop visual builder. Natural language rules instead of code. Update hundreds of templates from one place. No IT required.</p></div>
+                  </div>
+                  <div class="concept-block">
+                    <span class="concept-letter" style="color:var(--red);">C</span>
+                    <div class="concept-text"><h6>Unified Review Dashboard</h6><p>Single view for compliance officers showing every document's status, priority, and required action — with embedded preview and one-click approvals.</p></div>
+                  </div>
+                  <div class="concept-block">
+                    <span class="concept-letter" style="color:var(--pink);">D</span>
+                    <div class="concept-text"><h6>Intelligent Change Tracking</h6><p>Diff view highlighting only content changes, not formatting noise. Compliance review time: 25 minutes → 8 minutes.</p></div>
+                  </div>
+                  <div class="concept-block" style="border-bottom:2px solid var(--black);">
+                    <span class="concept-letter" style="color:var(--yellow);-webkit-text-stroke:1px var(--black);">E</span>
+                    <div class="concept-text"><h6>Automated Workflow Engine</h6><p>Rule-based routing with auto-notifications, parallel approvals, and full audit trails. Zero manual coordination. Auto-escalation so nothing falls through.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Prototype') return TL_STYLE + `
+          <div class="phase-banner" style="background:var(--pink);position:relative;overflow:hidden;">
+            <div style="font-size:2rem;">🛠️</div>
+            <div class="phase-inner">
+              <div class="phase-tag" style="background:var(--black);color:var(--white);">Phase 04 — Prototype</div>
+              <div class="phase-heading">Making Ideas Tangible</div>
+              <div class="phase-sub">Build the minimum fidelity needed to test the hypothesis. Nothing more.</div>
+            </div>
+            <div class="phase-num">04</div>
+          </div>
+          <div class="tl-wrap">
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--yellow);border-color:var(--black);"></div>
+              <div class="tl-card">
+                <div class="tl-label">Round 1</div>
+                <div class="tl-title">Lo-Fidelity Wireframes — 12 Users</div>
+                <div class="tl-body">Hand-sketched flows converted to simple digital wireframes. Goal: test structure and flow, not visual design. Key learning: users immediately wanted to know <strong>'where does this number come from?'</strong> — which validated the Data Field Inspector as Priority 1.</div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--blue);"></div>
+              <div class="tl-card">
+                <div class="tl-label">Round 2</div>
+                <div class="tl-title">Mid-Fidelity Prototype — 15 Users</div>
+                <div class="tl-body">Added basic visual hierarchy, tested specific interactions. Discovery: the original data inspector design — an icon in the corner of each field — was nearly invisible. Users hovered randomly hoping to find more info. <strong>Discoverability: only 20%.</strong></div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--red);border-width:3px;width:20px;height:20px;left:-34px;top:2px;"></div>
+              <div class="pivot-card">
+                <h6>⚡ The Moment Everything Changed: The Inspector Pivot</h6>
+                <p>We went back to ideation specifically for the Data Field Inspector. After <strong>four design iterations</strong>, we landed on a combination: a subtle colored indicator on data-linked fields + a hover popover with source details. We tested it. <strong>Discoverability jumped from 20% → 85%.</strong></p>
+                <p style="margin-top:8px;font-style:italic;font-size:.7rem;">"Transparency only works if users can actually find the transparency mechanism."</p>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--green);"></div>
+              <div class="tl-card">
+                <div class="tl-label">Round 3 — Make or Break</div>
+                <div class="tl-title">Hi-Fidelity Interactive Prototype — 25 Users, 5 Clients</div>
+                <div class="tl-body">Full interactive Figma prototype in front of 25 users across five client organizations. Real tasks with simulated data. Measured task completion rates, time-on-task, and qualitative feedback.</div>
+                <div class="stat-chips" style="margin-top:10px;">
+                  <div class="stat-chip" style="background:var(--yellow);"><strong>72</strong><span>SUS Score — good, not great</span></div>
+                  <div class="stat-chip"><strong>5</strong><span>Client Orgs Tested</span></div>
+                  <div class="stat-chip"><strong>3</strong><span>More Rounds Needed</span></div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Test') return TL_STYLE + `
+          <div class="phase-banner" style="background:var(--red);color:#fff;position:relative;overflow:hidden;">
+            <div style="font-size:2rem;">🧪</div>
+            <div class="phase-inner">
+              <div class="phase-tag" style="background:#fff;color:var(--red);">Phase 05 — Test</div>
+              <div class="phase-heading" style="color:#fff;">Where Assumptions Go to Die</div>
+              <div class="phase-sub" style="color:rgba(255,255,255,.7);">5 rounds. Clear goals. Defined criteria for when to iterate vs. move forward.</div>
+            </div>
+            <div class="phase-num" style="color:#fff;">05</div>
+          </div>
+          <div class="tl-wrap">
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--red);"></div>
+              <div class="tl-card">
+                <div class="tl-label">Problem Found → Fixed: Workflow Engine</div>
+                <div class="tl-title">Too Many Manual Steps</div>
+                <div class="fix-row">
+                  <div class="fix-before"><div class="fix-label">🔴 Before</div>Users expected approvals to route automatically but kept being asked to choose recipients manually.</div>
+                  <div class="fix-after"><div class="fix-label">🟢 After</div>Redesigned with smart defaults and role-based routing. Setup steps reduced by <strong>60%</strong>.</div>
+                </div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--blue);"></div>
+              <div class="tl-card">
+                <div class="tl-label">Problem Found → Fixed: Change Tracking</div>
+                <div class="tl-title">Compliance Officers Overwhelmed</div>
+                <div class="fix-row">
+                  <div class="fix-before"><div class="fix-label">🔴 Before</div>View showed all differences including whitespace and formatting changes — reviewers couldn't find what mattered.</div>
+                  <div class="fix-after"><div class="fix-label">🟢 After</div>Built a filter isolating only content changes. Review time: <strong>25 min → 8 min</strong>.</div>
+                </div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--green);"></div>
+              <div class="tl-card">
+                <div class="tl-label">Problem Found → Fixed: Template Logic</div>
+                <div class="tl-title">Conditional Rules Still Required IT</div>
+                <div class="fix-row">
+                  <div class="fix-before"><div class="fix-label">🔴 Before</div>A rule like 'if fund type is equity, show this section' needed a developer to implement.</div>
+                  <div class="fix-after"><div class="fix-label">🟢 After</div>Rebuilt with natural language input. Plain English toggle — no code required. Template time: <strong>4 hrs → 45 min</strong>.</div>
+                </div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--yellow);border-color:var(--black);"></div>
+              <div class="tl-card" style="background:var(--yellow);">
+                <div class="tl-label">The Beta — Where Real Learning Happened</div>
+                <div class="tl-title">6-Week Functional Beta · 25 Users · 5 Enterprise Clients</div>
+                <div class="tl-body">This is where we discovered edge cases no prototype could reveal — like what happens when a data source goes stale mid-document, or when a user needs to split a document into two separate reports. Each edge case became a design story. Each design story became a better product.</div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Solution') return TL_STYLE + `
+          <div style="border:2px solid var(--black);padding:14px 18px;background:var(--black);color:var(--yellow);box-shadow:4px 4px 0 var(--yellow);margin-bottom:20px;">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.6;margin-bottom:4px;">What We Built & Why It Works</div>
+            <div style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:.9rem;line-height:1.3;">DocuBuilder isn't a document editor. It's a trust-first automation platform — built on the principle that people embrace automation when they can see inside it, override it safely, and predict its behavior.</div>
+          </div>
+          <div class="tl-wrap solution-tl">
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--blue);"></div>
+              <div class="tl-card" style="border-left-color:var(--blue);">
+                <div class="tl-label">Feature 01</div>
+                <div class="tl-title">🔍 Data Field Inspector — "See the Why Behind Every Number"</div>
+                <div class="tl-body">Hover over any data field and see its source, when it was last refreshed, and exactly how it was calculated. One click to override without breaking the document.</div>
+                <div class="stat-chips" style="margin-top:8px;">
+                  <div class="stat-chip" style="background:var(--blue);color:#fff;"><strong>34%→92%</strong><span>Adoption Rate Jump</span></div>
+                  <div class="stat-chip"><strong>67%</strong><span>Less Manual Checking</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--green);"></div>
+              <div class="tl-card" style="border-left-color:var(--green);">
+                <div class="tl-label">Feature 02</div>
+                <div class="tl-title">🎨 Smart Template Editor — "Non-Technical Users, Professional Results"</div>
+                <div class="tl-body">Jennifer no longer needs IT to update templates. She drags, drops, and publishes. When the brand guideline changes, one update cascades to every template automatically.</div>
+                <div class="stat-chips" style="margin-top:8px;">
+                  <div class="stat-chip" style="background:var(--green);"><strong>4hr→45min</strong><span>Template Creation</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--red);"></div>
+              <div class="tl-card" style="border-left-color:var(--red);">
+                <div class="tl-label">Feature 03</div>
+                <div class="tl-title">📋 Unified Review Dashboard — "Everything in One Place"</div>
+                <div class="tl-body">Michael opens one screen and sees every document that needs his attention, its urgency, and what specifically needs review. Preview inline. Approve with one action.</div>
+                <div class="stat-chips" style="margin-top:8px;">
+                  <div class="stat-chip" style="background:var(--red);color:#fff;"><strong>34%</strong><span>Faster Review Cycles</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--pink);"></div>
+              <div class="tl-card" style="border-left-color:var(--pink);">
+                <div class="tl-label">Feature 04</div>
+                <div class="tl-title">🔄 Intelligent Change Tracking — "What Actually Changed?"</div>
+                <div class="tl-body">Side-by-side comparison that strips out formatting noise and shows only what matters. Reviewers can actually focus on content — not distracted by whitespace diffs.</div>
+                <div class="stat-chips" style="margin-top:8px;">
+                  <div class="stat-chip" style="background:var(--pink);color:#fff;"><strong>25min→8min</strong><span>Compliance Review</span></div>
+                  <div class="stat-chip"><strong>+43%</strong><span>Errors Caught</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--yellow);border-color:var(--black);"></div>
+              <div class="tl-card" style="border-left-color:var(--yellow);">
+                <div class="tl-label">Feature 05</div>
+                <div class="tl-title">⚙️ Automated Workflow Engine — "Documents Move Without Anyone Pushing Them"</div>
+                <div class="tl-body">The right people get notified at the right time. Approvals happen in parallel. Nothing waits in an inbox. Full audit trail for every action. Auto-escalation prevents bottlenecks.</div>
+                <div class="stat-chips" style="margin-top:8px;">
+                  <div class="stat-chip" style="background:var(--yellow);"><strong>8–10d→2–3d</strong><span>Document Cycle Time</span></div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Results') return TL_STYLE + `
+          <div class="outcome-grid">
+            <div class="outcome-cell" style="background:var(--blue);color:#fff;"><strong>78%</strong><span>Faster Doc Creation</span></div>
+            <div class="outcome-cell" style="background:var(--green);"><strong>89%</strong><span>Error Reduction</span></div>
+            <div class="outcome-cell" style="background:var(--yellow);"><strong>81/100</strong><span>SUS Score (from 52)</span></div>
+            <div class="outcome-cell" style="background:var(--red);color:#fff;"><strong>92%</strong><span>Feature Adoption M1</span></div>
+          </div>
+          <div class="outcome-grid" style="margin-bottom:20px;">
+            <div class="outcome-cell"><strong>$2.3M</strong><span>Annual Savings</span></div>
+            <div class="outcome-cell" style="background:var(--pink);color:#fff;"><strong>18</strong><span>New Funds Launched</span></div>
+            <div class="outcome-cell"><strong>40%</strong><span>Faster Onboarding</span></div>
+            <div class="outcome-cell" style="background:var(--black);color:var(--yellow);"><strong>0</strong><span>Reissuances Post-Launch</span></div>
+          </div>
+          <div class="tl-wrap">
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--blue);"></div>
+              <div class="tl-card">
+                <div class="tl-label">In Their Own Words — Post Launch</div>
+                <div class="insight-strip" style="border-color:var(--blue);background:#f0f4ff;margin-top:8px;">"I finally have time to analyze data instead of copying it around. The data inspector changed everything." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Sarah Chen, Investment Analyst</strong></div>
+                <div class="insight-strip" style="border-color:var(--green);background:#f0fff5;">"Review time dropped from 25 minutes to 8. I catch more errors because I'm not distracted by formatting noise." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Michael Rodriguez, Compliance Officer</strong></div>
+                <div class="insight-strip" style="border-color:var(--pink);background:#fff0f7;">"We launched 8 new funds last quarter without adding a single person to the team." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Jennifer Park, Marketing Ops Manager</strong></div>
+              </div>
+            </div>
+            <div class="tl-entry">
+              <div class="tl-dot" style="background:var(--black);"></div>
+              <div class="tl-card">
+                <div class="tl-label">Reflections</div>
+                <div class="tl-title">What We Learned Along the Way</div>
+                <div class="learned-cols">
+                  <div class="learned-box" style="border-top:3px solid var(--green);color:var(--green);">
+                    <h6 style="color:var(--black);">✅ What Worked</h6>
+                    <li>Transparency overcame automation skepticism</li>
+                    <li>Testing early saved us from 3 expensive mistakes</li>
+                    <li>Progressive disclosure kept all user levels happy</li>
+                    <li>Co-designing with compliance saved 3 weeks of rework</li>
+                  </div>
+                  <div class="learned-box" style="border-top:3px solid var(--yellow);color:var(--black);">
+                    <h6>💡 What I'd Do Differently</h6>
+                    <li>Involve compliance in ideation, not just testing</li>
+                    <li>Test with live data from day one — revealed 12 critical edge cases</li>
+                    <li>Design for mobile from the start — became a pain point post-launch</li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="takeaway-box">
+            <div style="font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.6;margin-bottom:8px;">Core Takeaway</div>
+            <p>Enterprise users will embrace automation if — and only if — it feels transparent, controllable, and reversible. <strong>Trust is not built by showing results. It is built by showing the process.</strong> DocuBuilder didn't succeed because it was powerful. It succeeded because it was honest.</p>
+          </div>`;
+      }
+    },
+    {
+      emoji:'\💬', title:'Weconnect — Conversational Marketing Platform',
+      tag:'AI-Powered · No-Code Platform', color:'#2DBF6A',
+      year:'Adroient ITES / Hitachi Vantara', role:'Senior UX/UI Consultant',
+      tabs:['Story','Empathize','Define','Ideate','Prototype','Test','Solution','Results'],
+      renderTab(tab) {
+
+        const WC_STYLE = `<style>
+          .wc-tl-wrap{position:relative;padding-left:36px;margin-top:4px;}
+          .wc-tl-wrap::before{content:'';position:absolute;left:9px;top:6px;bottom:0;width:2px;background:var(--black);opacity:.15;}
+          .wc-tl-entry{position:relative;margin-bottom:24px;}
+          .wc-tl-dot{position:absolute;left:-32px;top:4px;width:16px;height:16px;border-radius:50%;border:2px solid var(--black);flex-shrink:0;}
+          .wc-tl-card{border:2px solid var(--black);padding:16px 20px;box-shadow:3px 3px 0 var(--black);transition:transform .15s;}
+          .wc-tl-card:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--black);}
+          .wc-lbl{font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;opacity:.6;}
+          .wc-title{font-family:'Unbounded',sans-serif;font-weight:700;font-size:.82rem;margin-bottom:6px;line-height:1.3;}
+          .wc-body{font-size:.72rem;line-height:1.75;opacity:.78;}
+          .wc-banner{display:flex;align-items:center;gap:16px;padding:18px 22px;border:2px solid var(--black);box-shadow:4px 4px 0 var(--black);margin-bottom:22px;position:relative;overflow:hidden;}
+          .wc-phase-num{font-family:'Unbounded',sans-serif;font-weight:900;font-size:2.8rem;line-height:1;opacity:.12;position:absolute;right:18px;top:10px;}
+          .wc-inner{position:relative;flex:1;}
+          .wc-tag{font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--black);color:var(--yellow);padding:2px 8px;display:inline-block;margin-bottom:6px;}
+          .wc-heading{font-family:'Unbounded',sans-serif;font-weight:900;font-size:1rem;line-height:1.2;margin-bottom:4px;}
+          .wc-sub{font-size:.7rem;opacity:.65;line-height:1.5;}
+          .wc-stats{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;}
+          .wc-stat{border:2px solid var(--black);padding:8px 14px;box-shadow:2px 2px 0 var(--black);}
+          .wc-stat strong{font-family:'Unbounded',sans-serif;font-size:1.1rem;font-weight:900;display:block;line-height:1;}
+          .wc-stat span{font-size:.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.6;}
+          .wc-outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--black);margin-bottom:14px;}
+          .wc-outcome-cell{padding:16px 10px;border-right:2px solid var(--black);text-align:center;}
+          .wc-outcome-cell:last-child{border-right:none;}
+          .wc-outcome-cell strong{font-family:'Unbounded',sans-serif;font-size:1.3rem;font-weight:900;display:block;line-height:1;margin-bottom:4px;}
+          .wc-outcome-cell span{font-size:.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.6;line-height:1.4;display:block;}
+          .wc-insight{border-left:4px solid var(--black);padding:12px 16px;margin-bottom:10px;font-size:.73rem;line-height:1.7;}
+          .wc-insight strong{font-family:'Unbounded',sans-serif;font-size:.75rem;display:block;margin-bottom:3px;}
+          .wc-persona-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
+          .wc-persona{border:2px solid var(--black);padding:16px;box-shadow:3px 3px 0 var(--black);}
+          .wc-persona .p-emoji{font-size:1.4rem;margin-bottom:6px;}
+          .wc-persona .p-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:.72rem;margin-bottom:2px;}
+          .wc-persona .p-role{font-size:.62rem;opacity:.6;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+          .wc-persona .p-need{font-size:.68rem;line-height:1.6;opacity:.78;}
+          .wc-hmw{list-style:none;margin:0;padding:0;}
+          .wc-hmw-item{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border:2px solid var(--black);margin-bottom:-2px;font-size:.72rem;line-height:1.6;}
+          .wc-hmw-item:hover{background:var(--yellow);}
+          .wc-hmw-num{font-family:'Unbounded',sans-serif;font-weight:900;font-size:.95rem;flex-shrink:0;width:26px;opacity:.35;}
+          .wc-concept{border:2px solid var(--black);padding:14px 18px;margin-bottom:-2px;display:flex;gap:14px;align-items:flex-start;transition:background .15s;}
+          .wc-concept:hover{background:var(--yellow);}
+          .wc-concept-letter{font-family:'Unbounded',sans-serif;font-weight:900;font-size:1.3rem;flex-shrink:0;line-height:1;}
+          .wc-concept-text h6{font-weight:700;font-size:.78rem;margin-bottom:4px;}
+          .wc-concept-text p{font-size:.7rem;line-height:1.65;opacity:.75;}
+          .wc-pivot{border:3px solid var(--black);padding:18px 20px;background:var(--black);color:var(--yellow);box-shadow:5px 5px 0 var(--yellow);margin:14px 0;}
+          .wc-pivot h6{font-family:'Unbounded',sans-serif;font-weight:900;font-size:.88rem;margin-bottom:8px;}
+          .wc-pivot p{font-size:.72rem;line-height:1.7;opacity:.85;color:var(--yellow);}
+          .wc-fix-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+          .wc-fix-before{border:2px solid var(--black);padding:12px;background:#fff5f5;font-size:.7rem;line-height:1.6;}
+          .wc-fix-after{border:2px solid var(--black);padding:12px;background:#f0fff5;font-size:.7rem;line-height:1.6;}
+          .wc-fix-label{font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;opacity:.55;}
+          .wc-sol-tl .wc-tl-card{border-left:4px solid;}
+          .wc-learned{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+          .wc-learned-box{border:2px solid var(--black);padding:14px;box-shadow:3px 3px 0 var(--black);}
+          .wc-learned-box h6{font-family:'Unbounded',sans-serif;font-weight:700;font-size:.75rem;margin-bottom:8px;}
+          .wc-learned-box li{font-size:.7rem;line-height:1.8;opacity:.78;list-style:none;padding-left:12px;border-left:2px solid currentColor;}
+          .wc-takeaway{border:2px solid var(--black);padding:18px;background:var(--black);color:var(--yellow);margin-top:14px;box-shadow:5px 5px 0 var(--yellow);}
+          .wc-takeaway p{font-size:.76rem;line-height:1.8;opacity:.9;}
+          .wc-quote{border-left:4px solid var(--green);padding:12px 16px;margin-bottom:10px;font-size:.73rem;line-height:1.7;background:#f0fff5;}
+        </style>`;
+
+        if(tab==='Story') return WC_STYLE + `
+          <div class="wc-outcome-grid" style="margin-bottom:20px;">
+            <div class="wc-outcome-cell" style="background:var(--green);"><strong>2,450</strong><span>Businesses · 3 Months</span></div>
+            <div class="wc-outcome-cell" style="background:var(--yellow);"><strong>78%</strong><span>Activation Rate</span></div>
+            <div class="wc-outcome-cell" style="background:var(--blue);color:#fff;"><strong>40%</strong><span>Lead Capture Increase</span></div>
+            <div class="wc-outcome-cell" style="background:var(--black);color:var(--yellow);"><strong>86</strong><span>SUS Score</span></div>
+          </div>
+          <div class="wc-tl-wrap">
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--green);"></div>
+              <div class="wc-tl-card" style="background:var(--white);">
+                <div class="wc-lbl">The Moment That Started Everything</div>
+                <div class="wc-title">Maria Had the Ideas. She Just Couldn't Act on Them.</div>
+                <div class="wc-body">Maria runs a boutique e-commerce store selling handmade ceramics. She knows her customers, knows what questions they ask before buying, and knows exactly what she'd say to a visitor who'd been browsing for 10 minutes without adding to cart.<br><br>But every engagement tool required a developer. Her hired developer spent three days configuring integrations — not building conversations. By the time the chatbot went live, the campaign moment had passed.</div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--red);"></div>
+              <div class="wc-tl-card" style="background:#fff5f5;border-color:var(--red);">
+                <div class="wc-lbl">The Systemic Problem</div>
+                <div class="wc-title">Thousands of Marias. One Missing Tool.</div>
+                <div class="wc-body">Maria's story wasn't unique. It was the story of thousands of SMB owners who had the creativity and the customer insight — but lacked the technical infrastructure to act on it. The confidence gap was killing adoption across the industry. Weconnect was designed to close it.</div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--blue);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">Our Approach</div>
+                <div class="wc-title">Design Thinking — 5 Stages</div>
+                <div class="wc-body">Not a quick feature add — a ground-up rethink of how non-technical users could own their customer conversations. Every stage built on the last. Every assumption tested.</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;">
+                  ${[['🔍','Empathize'],['🎯','Define'],['💡','Ideate'],['🛠️','Prototype'],['🧪','Test']].map(([e,l])=>`<span class="tech-pill" style="background:var(--black);color:var(--yellow);font-size:.62rem;padding:4px 10px;">${e} ${l}</span>`).join('')}
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Empathize') return WC_STYLE + `
+          <div class="wc-banner" style="background:var(--green);">
+            <div style="font-size:2rem;">🔍</div>
+            <div class="wc-inner">
+              <div class="wc-tag" style="background:#fff;color:var(--green);">Phase 01 — Empathize</div>
+              <div class="wc-heading">Listening Before Solving</div>
+              <div class="wc-sub">We didn't assume we knew the problem. We went looking for it.</div>
+            </div>
+            <div class="wc-phase-num">01</div>
+          </div>
+          <div class="wc-stats">
+            <div class="wc-stat" style="background:var(--white);"><strong>15</strong><span>In-Depth Interviews</span></div>
+            <div class="wc-stat" style="background:var(--yellow);"><strong>6</strong><span>Contextual Inquiry Sessions</span></div>
+            <div class="wc-stat" style="background:var(--white);"><strong>8</strong><span>Platforms Analysed</span></div>
+            <div class="wc-stat" style="background:var(--white);"><strong>120</strong><span>Survey Responses</span></div>
+          </div>
+          <div class="wc-tl-wrap">
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--red);"></div>
+              <div class="wc-tl-card" style="background:#fff5f5;border-color:var(--red);">
+                <div class="wc-lbl">The Moment That Defined Everything</div>
+                <div class="wc-title">45 Seconds. Then She Closed the Tab.</div>
+                <div class="wc-body">During contextual inquiry, we watched a marketing manager open a competitor platform, look at the blank canvas, stare for 45 seconds — then close the tab and return to email. She didn't lack skill. She lacked a starting point.<br><br>We timed this across six sessions. Average abandonment: <strong>within 15 minutes</strong> if users couldn't create something meaningful. That number became our north star metric.</div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--green);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">What Users Told Us — Verbatim</div>
+                <div class="wc-title">4 Voices. One Clear Theme.</div>
+                <div class="wc-quote" style="border-color:var(--green);">"I have great ideas for customer engagement, but I need a developer for everything." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Marketing Manager, Retail</strong></div>
+                <div class="wc-quote" style="border-color:var(--blue);background:#f0f4ff;">"We use five different tools for chat, email, and social. Nothing talks to each other." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Small Business Owner, SaaS</strong></div>
+                <div class="wc-quote" style="border-color:var(--red);background:#fff5f5;">"By the time we launch a campaign, the moment has passed." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Marketing Director, E-commerce</strong></div>
+                <div class="wc-quote" style="border-color:var(--pink);background:#fff0f7;">"Everyone gets the same generic message. It feels robotic and we know it." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Customer Success Lead</strong></div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--yellow);border-color:var(--black);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">The Two People We Were Designing For</div>
+                <div class="wc-title">2 Personas, 2 Different Frustrations</div>
+                <div class="wc-persona-row">
+                  <div class="wc-persona" style="border-top:3px solid var(--green);">
+                    <div class="p-emoji">👩‍💼</div>
+                    <div class="p-name">Maria — Marketing Manager</div>
+                    <div class="p-role">Retail / E-commerce</div>
+                    <div class="p-need">Has the ideas, not the infrastructure. Abandons tools that don't show value in the first session. Needs a running start, not a blank canvas.</div>
+                  </div>
+                  <div class="wc-persona" style="border-top:3px solid var(--blue);">
+                    <div class="p-emoji">👨‍💼</div>
+                    <div class="p-name">Sam — Small Business Owner</div>
+                    <div class="p-role">SaaS / Services</div>
+                    <div class="p-need">Losing customers to slow response times. Can't afford enterprise tools. Needs something powerful without a technical team to run it.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Define') return WC_STYLE + `
+          <div class="wc-banner" style="background:var(--yellow);">
+            <div style="font-size:2rem;">🎯</div>
+            <div class="wc-inner">
+              <div class="wc-tag">Phase 02 — Define</div>
+              <div class="wc-heading">Naming the Real Problem</div>
+              <div class="wc-sub">The barrier wasn't technical. It was psychological.</div>
+            </div>
+            <div class="wc-phase-num">02</div>
+          </div>
+          <div class="wc-tl-wrap">
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--yellow);border-color:var(--black);"></div>
+              <div class="wc-tl-card" style="background:var(--yellow);">
+                <div class="wc-lbl">Point of View — Problem Statement</div>
+                <div class="wc-body" style="font-style:italic;font-size:.76rem;">"SMB marketing managers and business owners need a way to deploy personalized customer conversations without developer dependency — because every technical barrier is a missed engagement moment and a lost customer."</div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--black);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">The Real Discovery — A Confidence Gap, Not a Feature Gap</div>
+                <div class="wc-title">Users Weren't Failing. The Tools Were Making Them Feel Like They Were.</div>
+                <div class="wc-body">Every blank canvas, every JSON config panel, every integration wizard sent the same message: 'You need a developer for this.' We had to design around psychology, not just functionality.</div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--green);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">5 Root Causes We Had to Design Around</div>
+                <div class="wc-title">What the Research Was Really Telling Us</div>
+                <div class="wc-insight" style="border-color:var(--green);background:#f0fff5;margin-top:10px;"><strong>01 — The Blank Canvas Problem</strong>Users abandon platforms within 15 minutes if they can't create something meaningful. A template isn't a shortcut — it's a confidence builder.</div>
+                <div class="wc-insight" style="border-color:var(--blue);background:#f0f4ff;"><strong>02 — Visual Learning is Universal</strong>89% of users preferred drag-and-drop builders. Not because they were lazy — because they think in conversations, not code logic trees.</div>
+                <div class="wc-insight" style="border-color:var(--yellow);background:#fffbf0;"><strong>03 — Preview is Trust</strong>Users wouldn't publish a conversation they couldn't preview. The inability to 'see it before sending it' was a major adoption blocker.</div>
+                <div class="wc-insight" style="border-color:var(--red);background:#fff5f5;"><strong>04 — Integration Anxiety is Real</strong>Fear of 'breaking something' in an existing system prevented adoption. Users needed to feel safe — not brave — when connecting a new tool.</div>
+                <div class="wc-insight" style="border-color:var(--pink);background:#fff0f7;"><strong>05 — Value Must Come in Under 5 Minutes</strong>If users didn't feel like they'd accomplished something within 5 minutes of signing up, they churned. We had one session to prove value. One.</div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--blue);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">Design Principles — Our North Star</div>
+                <div class="wc-title">4 Rules Every Decision Had to Pass</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;">
+                  ${[['No-Code First','If it requires technical knowledge, redesign it'],['Guided Discovery','Progressive disclosure — introduce complexity only when ready'],['Instant Gratification','Value in under 5 minutes or redesign the onboarding'],['Conversation-Centric','Think in dialogues, not features']].map(([t,d])=>`<div style="border:2px solid var(--black);padding:10px;box-shadow:2px 2px 0 var(--black);font-size:.68rem;"><strong style="font-family:'Unbounded',sans-serif;font-size:.65rem;display:block;margin-bottom:3px;">${t}</strong>${d}</div>`).join('')}
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Ideate') return WC_STYLE + `
+          <div class="wc-banner" style="background:var(--blue);color:#fff;">
+            <div style="font-size:2rem;">💡</div>
+            <div class="wc-inner">
+              <div class="wc-tag" style="background:#fff;color:var(--blue);">Phase 03 — Ideate</div>
+              <div class="wc-heading" style="color:#fff;">Generating the Right Ideas</div>
+              <div class="wc-sub" style="color:rgba(255,255,255,.7);">We designed the best possible first 5 minutes — then reverse-engineered the product to deliver it.</div>
+            </div>
+            <div class="wc-phase-num" style="color:#fff;">03</div>
+          </div>
+          <div class="wc-tl-wrap">
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--blue);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">How Might We...? — 5 Questions That Unlocked the Design Space</div>
+                <ul class="wc-hmw" style="margin-top:10px;">
+                  <li class="wc-hmw-item"><span class="wc-hmw-num">01</span>How might we give users a running start instead of a blank canvas?</li>
+                  <li class="wc-hmw-item"><span class="wc-hmw-num">02</span>How might we make conversation logic visible without using code?</li>
+                  <li class="wc-hmw-item"><span class="wc-hmw-num">03</span>How might we help users test their bot before going live?</li>
+                  <li class="wc-hmw-item"><span class="wc-hmw-num">04</span>How might we remove the fear of connecting to existing tools?</li>
+                  <li class="wc-hmw-item"><span class="wc-hmw-num">05</span>How might we surface customer insights in plain language, not data dashboards?</li>
+                </ul>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--black);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">The 4 Concepts That Won</div>
+                <div class="wc-title">After Ideation Sprints + Prioritisation Matrix</div>
+                <div style="margin-top:10px;">
+                  <div class="wc-concept" style="border-top:2px solid var(--black);">
+                    <span class="wc-concept-letter" style="color:var(--green);">A</span>
+                    <div class="wc-concept-text"><h6>Template-First Onboarding</h6><p>40+ industry-specific templates. Each includes a working conversation flow, pre-written messages, and suggested triggers. Users adapt from minute one — not create from scratch.</p></div>
+                  </div>
+                  <div class="wc-concept">
+                    <span class="wc-concept-letter" style="color:var(--blue);">B</span>
+                    <div class="wc-concept-text"><h6>Visual Conversation Builder</h6><p>Block-based, drag-and-drop builder. Each block = one message, one question, one action. No flowchart spaghetti. No code. Just conversations you can see and rearrange.</p></div>
+                  </div>
+                  <div class="wc-concept">
+                    <span class="wc-concept-letter" style="color:var(--yellow);-webkit-text-stroke:1px var(--black);">C</span>
+                    <div class="wc-concept-text"><h6>Live Preview Panel</h6><p>Persistent side panel showing exactly how the conversation looks to the customer — in real time as you build. See it, test it, adjust it before publishing.</p></div>
+                  </div>
+                  <div class="wc-concept" style="border-bottom:2px solid var(--black);">
+                    <span class="wc-concept-letter" style="color:var(--pink);">D</span>
+                    <div class="wc-concept-text"><h6>One-Click Integrations</h6><p>OAuth-based connections to major platforms — no API keys, no webhook config. The message to users: 'Nothing will break.'</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Prototype') return WC_STYLE + `
+          <div class="wc-banner" style="background:var(--pink);">
+            <div style="font-size:2rem;">🛠️</div>
+            <div class="wc-inner">
+              <div class="wc-tag">Phase 04 — Prototype</div>
+              <div class="wc-heading">Building to Learn</div>
+              <div class="wc-sub">Our biggest mistake taught us our biggest lesson.</div>
+            </div>
+            <div class="wc-phase-num">04</div>
+          </div>
+          <div class="wc-tl-wrap">
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--red);"></div>
+              <div class="wc-tl-card" style="background:#fff5f5;border-color:var(--red);">
+                <div class="wc-lbl">Round 1 — Lo-Fidelity · 8 Users</div>
+                <div class="wc-title">Our First Prototype Was a Flowchart. It Was Wrong.</div>
+                <div class="wc-body">We started with a flowchart-style builder — because that's how conversation logic works under the hood. Nodes connected by arrows. Conditional branches. Familiar to developers. Completely alien to everyone else.<br><br>Task completion: <strong>23%</strong>. One user said: 'This looks like a tech thing. I don't think I'm the target user.' She was exactly the target user.</div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--black);border-width:3px;width:20px;height:20px;left:-34px;top:2px;"></div>
+              <div class="wc-pivot">
+                <h6>⚡ The Pivot: Flowchart → Blocks</h6>
+                <p>We went back to ideation and asked: what's the mental model our users already have? The answer: a conversation is a sequence of turns. That's not a graph — it's a list.<br><br>We rebuilt around <strong>vertical blocks stacked in sequence</strong>. Branching shown as indented sub-blocks, not crossing arrows. It felt like building a script, not programming logic.</p>
+                <p style="margin-top:8px;font-style:italic;font-size:.7rem;">"Oh, this is like writing a script for a play." — Round 2 user, exactly describing the intent.</p>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--yellow);border-color:var(--black);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">Round 2 — Mid-Fidelity · 12 Users</div>
+                <div class="wc-title">Block Builder + Persistent Preview Panel</div>
+                <div class="wc-body">Rebuilt with the block-based approach. Added a persistent preview panel that updates in real time as users build. Six of 12 users mentioned it as the feature that made them feel confident enough to publish.</div>
+                <div class="wc-stats" style="margin-top:10px;">
+                  <div class="wc-stat" style="background:var(--green);"><strong>71%</strong><span>Task Completion (up from 23%)</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--green);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">Round 3 — High-Fidelity · 15 Users · 4 Weeks Beta</div>
+                <div class="wc-title">Full End-to-End Workflow Validation</div>
+                <div class="wc-body">15 users completed full workflows: choose template → customise → connect platform → preview → publish. Beta cohort of 50 businesses surfaced real-world edge cases — a hair salon, a SaaS lead-qual bot, a food truck with open/closed-hours logic. Each scenario became a design story.</div>
+                <div class="wc-stats" style="margin-top:10px;">
+                  <div class="wc-stat" style="background:var(--green);"><strong>93%</strong><span>Task Completion</span></div>
+                  <div class="wc-stat" style="background:var(--yellow);"><strong>84</strong><span>SUS Score</span></div>
+                  <div class="wc-stat"><strong>50</strong><span>Beta Businesses</span></div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Test') return WC_STYLE + `
+          <div class="wc-banner" style="background:var(--black);color:var(--yellow);">
+            <div style="font-size:2rem;">🧪</div>
+            <div class="wc-inner">
+              <div class="wc-tag" style="background:var(--yellow);color:var(--black);">Phase 05 — Test</div>
+              <div class="wc-heading" style="color:var(--yellow);">4 Rounds. 4 Versions of the Truth.</div>
+              <div class="wc-sub" style="color:rgba(255,255,255,.6);">Clear success criteria. Pre-specified change triggers. No guessing when to iterate.</div>
+            </div>
+            <div class="wc-phase-num" style="color:var(--yellow);">05</div>
+          </div>
+          <div class="wc-tl-wrap">
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--green);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">Problem Found → Fixed: Templates Too Rigid</div>
+                <div class="wc-title">Users Wanted to Go Deeper</div>
+                <div class="wc-fix-row">
+                  <div class="wc-fix-before"><div class="wc-fix-label">🔴 Before</div>Templates were the most-used feature, but users wanted to customise more deeply — rename blocks, adjust tone, swap placeholder content with real brand language.</div>
+                  <div class="wc-fix-after"><div class="wc-fix-label">🟢 After</div>Added <strong>'Make It Yours'</strong> mode — full customisation of every block, tone, and brand voice without leaving the template structure.</div>
+                </div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--blue);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">Problem Found → Fixed: Analytics Ignored</div>
+                <div class="wc-title">Data Was There. It Wasn't Actionable.</div>
+                <div class="wc-fix-row">
+                  <div class="wc-fix-before"><div class="wc-fix-label">🔴 Before</div>Users would check the dashboard once and never return. Dashboards required interpretation — non-analysts couldn't act on them.</div>
+                  <div class="wc-fix-after"><div class="wc-fix-label">🟢 After</div>Rebuilt to surface only <strong>3 numbers</strong> — conversations started, leads captured, drop-off point — with a plain-language recommendation next to each.</div>
+                </div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--red);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">Problem Found → Roadmapped: Mobile Setup</div>
+                <div class="wc-title">An Afterthought That Showed</div>
+                <div class="wc-fix-row">
+                  <div class="wc-fix-before"><div class="wc-fix-label">🔴 Before</div>Users were often setting up bots on their phones between meetings. The mobile experience was broken — we hadn't designed for it.</div>
+                  <div class="wc-fix-after"><div class="wc-fix-label">📋 Roadmapped</div>Mobile-first experience added to immediate post-launch roadmap. Should have been there from the start — key retrospective learning.</div>
+                </div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--yellow);border-color:var(--black);"></div>
+              <div class="wc-tl-card" style="background:var(--yellow);">
+                <div class="wc-lbl">The Number That Told the Full Story</div>
+                <div class="wc-title">78% Activation Rate</div>
+                <div class="wc-body">Our primary metric: the % of users who created and published at least one live conversation. Industry average for tools in this category: <strong>30–40%</strong>.<br><br>Weconnect launched at <strong>78%</strong>. That number meant 78 out of every 100 people who signed up found enough value — and enough confidence — to go live.</div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Solution') return WC_STYLE + `
+          <div style="border:2px solid var(--black);padding:14px 18px;background:var(--black);color:var(--yellow);box-shadow:4px 4px 0 var(--yellow);margin-bottom:20px;">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.6;margin-bottom:4px;">Simplicity With Strategic Depth</div>
+            <div style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:.9rem;line-height:1.3;">Weconnect isn't a stripped-down tool. It's a full-featured platform that reveals its power gradually — only when you're ready for it.</div>
+          </div>
+          <div class="wc-tl-wrap wc-sol-tl">
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--green);"></div>
+              <div class="wc-tl-card" style="border-left-color:var(--green);">
+                <div class="wc-lbl">Feature 01</div>
+                <div class="wc-title">📚 Smart Template Library — "Start from Something, Not Nothing"</div>
+                <div class="wc-body">40+ industry-specific templates spanning e-commerce, SaaS, hospitality, and professional services. Each is a fully working conversation — not a blank form. Users customise rather than create from scratch, and that distinction makes all the difference.</div>
+                <div class="wc-stats" style="margin-top:8px;">
+                  <div class="wc-stat" style="background:var(--green);"><strong>40+</strong><span>Templates at Launch</span></div>
+                  <div class="wc-stat"><strong>85%</strong><span>Less Setup Anxiety</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--blue);"></div>
+              <div class="wc-tl-card" style="border-left-color:var(--blue);">
+                <div class="wc-lbl">Feature 02</div>
+                <div class="wc-title">🎨 Visual Conversation Builder — "Build Like You Think"</div>
+                <div class="wc-body">Block-based drag-and-drop logic that mirrors how humans think about dialogue. Branching is visible, readable, and adjustable without technical knowledge.</div>
+                <div class="wc-stats" style="margin-top:8px;">
+                  <div class="wc-stat" style="background:var(--blue);color:#fff;"><strong>23%→78%</strong><span>Activation Rate Jump</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--yellow);border-color:var(--black);"></div>
+              <div class="wc-tl-card" style="border-left-color:var(--yellow);">
+                <div class="wc-lbl">Feature 03</div>
+                <div class="wc-title">👁️ Live Preview Panel — "See What Your Customer Will See"</div>
+                <div class="wc-body">A persistent, always-visible preview that updates in real time as you build. The single feature most credited by users for giving them the confidence to publish. 'I can see what the customer will see' was said in multiple sessions, in almost exactly those words.</div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--pink);"></div>
+              <div class="wc-tl-card" style="border-left-color:var(--pink);">
+                <div class="wc-lbl">Feature 04</div>
+                <div class="wc-title">🔌 One-Click Integrations — "Connect Without Fear"</div>
+                <div class="wc-body">OAuth-based connections to major platforms. No API configuration. No webhooks. No risk of breaking existing systems. Integration anxiety: eliminated.</div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--black);"></div>
+              <div class="wc-tl-card" style="border-left-color:var(--black);">
+                <div class="wc-lbl">Feature 05</div>
+                <div class="wc-title">📊 Plain-Language Analytics — "Insights, Not Data Dumps"</div>
+                <div class="wc-body">Three metrics, one recommendation. Non-analysts get actionable intelligence — conversations started, leads captured, drop-off point — with a plain-language action next to each number.</div>
+              </div>
+            </div>
+          </div>`;
+
+        if(tab==='Results') return WC_STYLE + `
+          <div class="wc-outcome-grid">
+            <div class="wc-outcome-cell" style="background:var(--green);"><strong>2,450</strong><span>Businesses · 3 Months</span></div>
+            <div class="wc-outcome-cell" style="background:var(--yellow);"><strong>78%</strong><span>Activation Rate</span></div>
+            <div class="wc-outcome-cell" style="background:var(--blue);color:#fff;"><strong>40%</strong><span>Lead Capture Increase</span></div>
+            <div class="wc-outcome-cell" style="background:var(--pink);color:#fff;"><strong>35%</strong><span>Support Tickets Reduced</span></div>
+          </div>
+          <div class="wc-outcome-grid" style="margin-bottom:20px;">
+            <div class="wc-outcome-cell" style="background:var(--black);color:var(--yellow);"><strong>86</strong><span>SUS Score</span></div>
+            <div class="wc-outcome-cell"><strong>&lt;1hr</strong><span>Setup Time</span></div>
+            <div class="wc-outcome-cell" style="background:var(--green);"><strong>93%</strong><span>Task Completion (Beta)</span></div>
+            <div class="wc-outcome-cell"><strong>0</strong><span>Developers Needed</span></div>
+          </div>
+          <div class="wc-tl-wrap">
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--green);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">In Their Own Words — Post Launch</div>
+                <div class="wc-quote" style="margin-top:8px;">"I went from 'I have no idea' to having a live chatbot in under an hour. Game-changer." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Sarah K., E-commerce Owner</strong></div>
+                <div class="wc-quote" style="border-color:var(--blue);background:#f0f4ff;">"Finally, a tool that doesn't require begging the dev team for help." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Marcus T., Marketing Manager</strong></div>
+                <div class="wc-quote" style="border-color:var(--pink);background:#fff0f7;">"The templates gave me ideas I wouldn't have thought of. Now our conversations feel personal, not pushy." <strong style="font-size:.65rem;opacity:.6;font-family:inherit;">— Jennifer L., Customer Success Lead</strong></div>
+              </div>
+            </div>
+            <div class="wc-tl-entry">
+              <div class="wc-tl-dot" style="background:var(--black);"></div>
+              <div class="wc-tl-card">
+                <div class="wc-lbl">Reflections</div>
+                <div class="wc-title">What We Learned Along the Way</div>
+                <div class="wc-learned">
+                  <div class="wc-learned-box" style="border-top:3px solid var(--green);color:var(--green);">
+                    <h6 style="color:var(--black);">✅ What Worked</h6>
+                    <li>Template-first onboarding dramatically reduced setup anxiety</li>
+                    <li>Visual block builder made complex logic accessible to non-technical users</li>
+                    <li>Persistent preview was the single biggest confidence driver</li>
+                    <li>Progressive disclosure kept novices and power users equally satisfied</li>
+                  </div>
+                  <div class="wc-learned-box" style="border-top:3px solid var(--yellow);color:var(--black);">
+                    <h6>💡 What I'd Do Differently</h6>
+                    <li>Launch beta earlier to capture real-world edge cases before design lock</li>
+                    <li>Create differentiated onboarding paths per user type from day one</li>
+                    <li>Prioritise mobile before launch, not after</li>
+                    <li>Build migration tools for users switching from other platforms</li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wc-takeaway">
+            <div style="font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.6;margin-bottom:8px;">Core Takeaway</div>
+            <p>The hardest challenge wasn't building features — it was resisting the urge to build more of them. <strong>Success came from discipline: staying focused on core personas, prioritising ruthlessly based on jobs-to-be-done, and validating every assumption through testing.</strong> The 78% activation rate didn't come from brilliant design. It came from relentless listening.</p>
+          </div>`;
+      }
+    },
+    {
+      emoji:'\🚁', title:'HIBI — Drone-Based High Tension Tower Inspection',
+      tag:'Industrial UX · Drone Technology · AI', color:'#FF6B9D',
+      year:'Adroient ITES / Hitachi Vantara', role:'Senior UX/UI Consultant',
+      tabs:['Overview','Research','Solution','Results'],
+      renderTab(tab) {
+        if(tab==='Overview') return `
+          <div class="info-grid">
+            <div class="info-box"><h4>The Problem</h4><p>Traditional tower inspections required inspectors to risk their lives climbing structures, or spend thousands per tower on helicopter inspections. Each inspection took 4\–6 hours and often missed critical defects until they were dangerous.</p></div>
+            <div class="info-box"><h4>The Solution</h4><p>A comprehensive drone-based inspection application with automated flight paths, AI-powered defect detection, and streamlined reporting — designed to work in harsh field conditions with minimal training.</p></div>
+            <div class="info-box"><h4>Design Principles</h4><div style="margin-top:8px;">${['Simplicity First','Field-Optimized','Data Transparency','Workflow Integration'].map(t=>`<span class="tech-pill">${t}</span>`).join('')}</div></div>
+            <div class="info-box"><h4>The Stakes</h4><p>Life-safety critical application. Inspectors often work in remote areas with limited connectivity, wearing gloves, in bright sunlight. Every UX decision had to account for these extreme field conditions.</p></div>
+          </div>
+          <div style="margin-top:20px;">
+            <div class="quote-box">"Every time we climb those towers, we're putting our lives at risk. One wrong move and it's over." <span class="quote-author">— Tower Inspector</span></div>
+            <div class="quote-box">"Helicopter inspections cost us thousands per tower, and we have hundreds to inspect annually." <span class="quote-author">— Maintenance Manager</span></div>
+          </div>`;
+        if(tab==='Research') return `
+          <div class="process-step"><div class="step-num" style="color:var(--pink);">\🎤</div><div class="step-content"><h5>Stakeholder Interviews</h5><p>Conducted with tower inspectors, maintenance teams, and engineers. Revealed that safety risk was the #1 pain point — more than cost or efficiency. Design had to eliminate risk first.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--blue);">\👀</div><div class="step-content"><h5>Observational Field Studies</h5><p>Observed inspectors in the field to witness the actual workflow, environmental challenges, and the data quality limitations of manual methods. Essential for field-optimized design.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--green);">53</div><div class="step-content"><h5>Total Users Tested — 3 Rounds</h5><p>Lo-fi (10 field inspectors) \→ Hi-fi Figma (18 users: inspectors, engineers, managers) \→ Functional field pilots (25 inspectors across 3 energy companies). Usability score: 62% \→ 88%.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--red);">5</div><div class="step-content"><h5>AI Detection Visualization Versions</h5><p>Critical iteration: overlay annotation system achieved 92% inspector confidence vs 45% with initial text-only alerts. Making AI explainable was the key to trust in a safety-critical context.</p></div></div>`;
+        if(tab==='Solution') return `
+          <div class="process-step"><div class="step-num" style="color:var(--pink);">\📊</div><div class="step-content"><h5>Centralized Inspector Dashboard</h5><p>All tower data, inspection history, and maintenance schedules in one view. Single source of truth eliminated multi-system switching — reduced pre-inspection planning time by 60%.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--blue);">\🚁</div><div class="step-content"><h5>Integrated Drone Control Interface</h5><p>Real-time deployment with automated flight paths. Glove-friendly touch targets. Consistent tower coverage — reduced inspection time from 4\–6 hours to approximately 30 minutes.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--green);">\🤖</div><div class="step-content"><h5>AI-Enhanced Defect Detection</h5><p>Automated algorithms analyze high-resolution imagery, identifying corrosion, cracks, and structural anomalies with visual overlay annotations. Improved detection accuracy by 40%.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--red);">\📝</div><div class="step-content"><h5>Template-Based Reporting</h5><p>Pre-configured templates with auto-populated data. Report generation: 2 hours \→ 15 minutes. Engineers can make maintenance decisions the same day as inspection.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--yellow);-webkit-text-stroke:1px #111;">\⚠\️</div><div class="step-content"><h5>Maintenance Prioritization Engine</h5><p>Automatically categorizes defects by severity and schedules maintenance. Critical issues flagged immediately. Reduced tower downtime by 35%.</p></div></div>`;
+        if(tab==='Results') return `
+          <div class="metric-row"><div class="metric-val" style="color:var(--pink);">75%</div><div class="metric-desc">Faster inspection — from 4\–6 hours down to approximately 90 minutes per tower.</div></div>
+          <div class="metric-row"><div class="metric-val" style="color:var(--blue);">85%</div><div class="metric-desc">Cost savings compared to traditional helicopter inspections per tower inspection.</div></div>
+          <div class="metric-row"><div class="metric-val" style="color:var(--green);">40%</div><div class="metric-desc">Improvement in defect detection accuracy through AI-enhanced image analysis.</div></div>
+          <div class="metric-row"><div class="metric-val" style="color:var(--red);">55%</div><div class="metric-desc">Customer success rate in implementation across 3 major energy companies.</div></div>
+          <div class="metric-row"><div class="metric-val" style="color:var(--yellow);-webkit-text-stroke:1px #111;">88%</div><div class="metric-desc">Usability satisfaction score — up from 62% across three rounds of iterative testing.</div></div>
+          <div style="margin-top:14px;"><div class="quote-box">"The reporting feature is a game-changer. We can now make maintenance decisions the same day as inspection." <span class="quote-author">— Engineering Manager</span></div></div>`;
+      }
+    },
+    {
+      emoji:'\🚀', title:'Rocket Uniface — Enterprise UX Widget Framework',
+      tag:'Enterprise Platform · Low-Code · Fluent Design', color:'#F5A800',
+      year:'Rocket Software', role:'Senior UX Designer P4 / Project Lead',
+      tabs:['Overview','Research','Solution','Results'],
+      renderTab(tab) {
+        if(tab==='Overview') return `
+          <div class="info-grid">
+            <div class="info-box"><h4>The Problem</h4><p>Uniface excelled at backend enterprise management but lacked a modern front-end design system. Customers integrated expensive third-party libraries causing CSS conflicts, licensing costs ($15K\–$50K/year), and maintenance nightmares.</p></div>
+            <div class="info-box"><h4>The Solution</h4><p>An open UX Widget Framework built on Microsoft's Fluent Design System — providing both pre-built components and the flexibility to create custom widgets, eliminating licensing costs and positioning Uniface against OutSystems, Mendix, and Power Apps.</p></div>
+            <div class="info-box"><h4>The Critical Pivot</h4><p>Initially designed as a closed widget library. Mid-project testing revealed customers needed custom widget creation. Pivoted to an open framework architecture — this pivot became the core competitive differentiator.</p></div>
+            <div class="info-box"><h4>4 Core Personas</h4><p>Amy (Architect, 40) · Fabian (Developer, 45) · Ursula (UX Designer, 30) · Nora (End User/Banker, 35). Each persona drove distinct design requirements that shaped the framework architecture.</p></div>
+          </div>`;
+        if(tab==='Research') return `
+          <div class="process-step"><div class="step-num" style="color:var(--yellow);-webkit-text-stroke:1px #111;">\❤\️</div><div class="step-content"><h5>Empathy Mapping</h5><p>Mapped what users say, think, do, and feel for all 4 personas — uncovering the emotional gap between the flexibility they needed and the outdated HTML widget reality they were stuck with.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--blue);">\🎤</div><div class="step-content"><h5>User Interviews + Heuristic Analysis</h5><p>In-depth conversations with architects, developers, and designers. Applied Nielsen's heuristics to the existing IDE — discovered major violations in consistency, error prevention, and aesthetic design.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--green);">\⚔\️</div><div class="step-content"><h5>Competitive Benchmarking</h5><p>Benchmarked against OutSystems, Mendix, and Microsoft Power Apps. Modern design systems and widget flexibility were identified as the differentiators that would reposition Uniface in the market.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--red);">66</div><div class="step-content"><h5>Total Users Tested Across 3 Rounds</h5><p>Lo-fi (14 devs/architects) \→ Hi-fi Figma (22 users) \→ Functional beta (30 devs across 8 enterprise clients). A/B testing, usability, and WCAG accessibility validation with screen readers.</p></div></div>
+          <div style="border:var(--border);padding:18px;background:var(--yellow);margin-top:10px;box-shadow:var(--shadow);"><strong style="font-size:0.78rem;">Key Iterations:</strong><span style="font-size:0.75rem;"> Component repositioning (40% less mouse travel) · IDE navigation (5 clicks \→ 2) · Onboarding docs (4 hours \→ 45 min) · Data grid states (60% confusion resolved)</span></div>`;
+        if(tab==='Solution') return `
+          <div class="process-step"><div class="step-num" style="color:var(--yellow);-webkit-text-stroke:1px #111;">\🔧</div><div class="step-content"><h5>UX Widget Framework (Open Architecture)</h5><p>Custom communication layer between web components and Uniface. Provides flexibility beyond defaults — developers can create custom widgets using any web component library while maintaining platform consistency.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--blue);">\📦</div><div class="step-content"><h5>Fluent-Based Widget Library</h5><p>Pre-built widgets leveraging open-source Fluent Web Components. Eliminates multiple third-party libraries, reduces costs to zero, and provides a modern cohesive UI out-of-the-box.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--green);">\🎨</div><div class="step-content"><h5>Flexible Style Adaptation</h5><p>Custom style guide support with Fluent UI as default. Each customer maintains brand identity while benefiting from the framework. Consistency with customization — not a compromise.</p></div></div>
+          <div class="process-step"><div class="step-num" style="color:var(--red);">\💻</div><div class="step-content"><h5>Integrated Development Environment</h5><p>Repository-based IDE with ProcScript, JavaScript, XHTML, and CSS support. Familiar tools and languages reduce learning curves while model-based approach accelerates development cycles.</p></div></div>`;
+        if(tab==='Results') return `
+          <div class="metric-row"><div class="metric-val" style="color:var(--yellow);-webkit-text-stroke:1px #111;">100%</div><div class="metric-desc">Licensing cost reduction — third-party widget library fees completely eliminated ($15K\–$50K/year saved per customer).</div></div>
+          <div class="metric-row"><div class="metric-val" style="color:var(--blue);">65%</div><div class="metric-desc">Faster development speed reported by enterprise customers using the new widget framework.</div></div>
+          <div class="metric-row"><div class="metric-val" style="color:var(--green);">80%</div><div class="metric-desc">Maintenance efficiency improvement — CSS style leakage eliminated, versioning overhead removed.</div></div>
+          <div class="metric-row"><div class="metric-val" style="color:var(--red);">42%</div><div class="metric-desc">Increase in customer satisfaction scores in post-launch surveys across enterprise clients.</div></div>
+          <div class="metric-row"><div class="metric-val" style="color:var(--pink);">58%</div><div class="metric-desc">Reduction in UI/UX support tickets in the first 6 months post-launch.</div></div>
+          <div style="margin-top:14px;"><div class="quote-box">"The framework gives us flexibility with modern standards — no more choosing between consistency and customization." <span class="quote-author">— Enterprise Architect, Rocket Software Customer</span></div></div>`;
+      }
+    }
+  ];
+
+  let currentProject = 0, currentTab = 0;
+
+  function openProject(idx) {
+    currentProject = idx; currentTab = 0;
+    renderModal();
+    const m = document.getElementById('project-modal');
+    m.style.display = 'block'; m.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeProject() {
+    document.getElementById('project-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  function handleModalClick(e) {
+    if (e.target === document.getElementById('project-modal')) closeProject();
+  }
+  function prevProject() { currentProject = (currentProject - 1 + PROJECTS.length) % PROJECTS.length; currentTab = 0; renderModal(); }
+  function nextProject() { currentProject = (currentProject + 1) % PROJECTS.length; currentTab = 0; renderModal(); }
+  function switchTab(idx) { currentTab = idx; renderModalTabs(); renderModalBody(); }
+
+  function renderModal() {
+    const p = PROJECTS[currentProject];
+    const box = document.getElementById('modal-box');
+    box.style.animation = 'none'; box.offsetHeight; box.style.animation = 'modalIn 0.3s ease';
+    document.getElementById('modal-header').innerHTML = `
+      <div style="display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap;">
+        <div style="width:64px;height:64px;background:${p.color};border:3px solid var(--black);display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:var(--shadow-lg);flex-shrink:0;">${p.emoji}</div>
+        <div style="flex:1;min-width:200px;">
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px;">
+            <span style="background:var(--black);color:var(--yellow);font-size:0.58rem;font-weight:700;padding:3px 9px;letter-spacing:1.5px;text-transform:uppercase;">${p.tag}</span>
+          </div>
+          <h2 style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(1rem,2.5vw,1.6rem);letter-spacing:-1px;line-height:1.2;">${p.title}</h2>
+          <div style="margin-top:7px;font-size:0.7rem;opacity:0.55;">
+            <span>Role: <strong>${p.role}</strong></span> &nbsp;·&nbsp; <span><strong>${p.year}</strong></span>
+          </div>
+        </div>
+      </div>`;
+    renderModalTabs(); renderModalBody();
+  }
+  function renderModalTabs() {
+    const p = PROJECTS[currentProject];
+    document.getElementById('modal-tabs').innerHTML = p.tabs.map((t,i)=>
+      `<button class="modal-tab ${i===currentTab?'active':''}" onclick="switchTab(${i})">${t}</button>`
+    ).join('');
+  }
+  function renderModalBody() {
+    const p = PROJECTS[currentProject];
+    document.getElementById('modal-body').innerHTML = p.renderTab(p.tabs[currentTab]);
+  }
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeProject(); });
+</script>
+</body>
+</html>
